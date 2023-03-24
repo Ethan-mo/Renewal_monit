@@ -141,13 +141,18 @@ public class ConnectionActivity extends BaseActivity {
     public static final int CODE_HELP_HUB_AP_NOT_FOUND                  = 203;
     public static final int CODE_HELP_HUB_AP_NOT_CONNECTED              = 204;
 
+    public static final int CODE_HELP_LAMP_NOT_FOUND                     = 300;
+    public static final int CODE_HELP_LAMP_ALREADY_REGISTERED            = 302;
+    public static final int CODE_HELP_LAMP_AP_NOT_FOUND                  = 303;
+    public static final int CODE_HELP_LAMP_AP_NOT_CONNECTED              = 304;
+
     private static final int MSG_SHOW_FRAGMENT                          = 1;
     private static final int MSG_REFRESH_HUB_AP_CONNECTION_PROGRESS 	= 2;
     private static final int MSG_SHOW_FAILED_DIALOG 	                = 3;
 
     private static final int TIME_HUB_AP_CONNECTION_WAIT_SEC            = 30;
     public static final int PARAM_FOR_NEW_NETWORK	                    = 99;
-    private static final int TIME_SHOW_ORDER_INDICATOR_WAIT_MS          = 300;
+    //private static final int TIME_SHOW_ORDER_INDICATOR_WAIT_MS          = 300;
 
     private ConnectionSelectDeviceFragment mSelectDeviceFragment;
 

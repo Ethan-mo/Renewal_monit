@@ -791,6 +791,9 @@
     <string name="toast_hub_initialize_succeeded">Hub initializing has been succeeded</string>
     <string name="toast_hub_initialize_failed">Hub initializing has been failed.</string>
     <string name="toast_hub_initialize_wrong_serialnumber">Wrong hub serial number</string>
+    <string name="toast_lamp_initialize_succeeded">lamp initializing has been succeeded</string>
+    <string name="toast_lamp_initialize_failed">lamp initializing has been failed.</string>
+    <string name="toast_lamp_initialize_wrong_serialnumber">Wrong lamp serial number</string>
 
 
 

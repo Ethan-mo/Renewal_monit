@@ -20,6 +20,7 @@ import goodmonit.monit.com.kao.R;
 import goodmonit.monit.com.kao.activity.ConnectionActivity;
 import goodmonit.monit.com.kao.analytics.ScreenInfo;
 import goodmonit.monit.com.kao.constants.Configuration;
+import goodmonit.monit.com.kao.constants.InternetErrorCode;
 import goodmonit.monit.com.kao.devices.DeviceInfo;
 import goodmonit.monit.com.kao.devices.DeviceType;
 import goodmonit.monit.com.kao.dialog.ProgressHorizontalDialog;
@@ -28,6 +29,7 @@ import goodmonit.monit.com.kao.fragment.BaseFragment;
 import goodmonit.monit.com.kao.managers.PreferenceManager;
 import goodmonit.monit.com.kao.managers.ServerManager;
 import goodmonit.monit.com.kao.managers.ServerQueryManager;
+import goodmonit.monit.com.kao.managers.ValidationManager;
 import goodmonit.monit.com.kao.message.NotificationMessage;
 import goodmonit.monit.com.kao.message.NotificationType;
 import goodmonit.monit.com.kao.services.ConnectionManager;
@@ -49,13 +51,17 @@ public class ConnectionLampReady extends BaseFragment {
 
 	private Button btnConnect;
 	private ProgressHorizontalDialog mDlgProcessing;
-	private SimpleDialog mDlgConnectionFailed, mDlgNotDetected, mDlgInternetConnection, mDlgGuest;
+	private SimpleDialog mDlgConnectionFailed, mDlgNotDetected, mDlgInternetConnection, mDlgGuest, mDlgInitializeLamp;
 	private int scanSeconds;
 
 	private ImageView ivAnimationStep1, ivAnimationStep2;
-	private TextView tvDetail;
+	private TextView tvTitle, tvDetail;
+	private DeviceInfo mLampInfo;
+	private String mTitle, mButtonName;
 	private ViewSwitcher vsAnimation;
 	private DeviceInfo mGuestDeviceInfo;
+
+	private ValidationManager mValidationMgr;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -170,39 +176,45 @@ public class ConnectionLampReady extends BaseFragment {
 		if (mDlgNotDetected == null) {
 			mDlgNotDetected = new SimpleDialog(
 					mContext,
+					"[Code" + ConnectionActivity.CODE_HELP_LAMP_NOT_FOUND + "]",
 					getString(R.string.dialog_contents_not_detected_lamp),
 					getString(R.string.btn_cancel),
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							try {
-								mDlgNotDetected.dismiss();
-							} catch (IllegalArgumentException e) {
-
-							}
+							mDlgNotDetected.dismiss();
 						}
 					},
 					getString(R.string.btn_try_again),
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							try {
-								mDlgNotDetected.dismiss();
-							} catch (IllegalArgumentException e) {
-
-							}
-
+							mDlgNotDetected.dismiss();
 							_startConnect();
 						}
 					});
 			mDlgNotDetected.setContentsGravity(Gravity.LEFT);
 		}
 
-		if (mDlgGuest == null) {
+		if (mDlgGuest == null) { //이부분이 램프에서 초기화 과정을 거쳐야하는
 			mDlgGuest = new SimpleDialog(
-					mContext,
+					mContext,"[Code" + ConnectionActivity.CODE_HELP_HUB_ALREADY_REGISTERED + "]",
 					getString(R.string.dialog_contents_already_registered_invite_request) + mPreferenceMgr.getShortId(),
-					getString(R.string.btn_close),
+					getString(R.string.btn_device_initialize),
+					new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							mDlgGuest.dismiss();
+							if (mDlgConnectionFailed != null && !mDlgInitializeLamp.isShowing()) {
+								try {
+									mDlgInitializeLamp.show();
+								} catch (Exception e) {
+
+								}
+							}
+							((ConnectionActivity)mMainActivity).allowGuestManualConnection(false);
+						}
+					}, getString(R.string.btn_close),
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
@@ -218,6 +230,77 @@ public class ConnectionLampReady extends BaseFragment {
 							((ConnectionActivity)mMainActivity).allowGuestManualConnection(false);
 						}
 					});
+
+			mDlgGuest.setButtonColor(
+					getResources().getColor(R.color.colorTextWarning),
+					getResources().getColor(R.color.colorTextPrimary));
+
+			mDlgGuest.setContentsGravity(Gravity.LEFT);
+		}
+		mDlgGuest.showHelpButton(true);
+		mDlgGuest.setHelpButtonListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				((ConnectionActivity)mContext).showHelpContents(11, 27);
+			}
+		});
+
+		if (mDlgInitializeLamp == null) {
+			mDlgInitializeLamp = new SimpleDialog(mContext,
+					getString(R.string.dialog_contents_sensor_already_registered_init)+mPreferenceMgr.getShortId(), //기기 초기화시에 ~~~
+					getString(R.string.btn_cancel), // 취소버튼
+					new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							mDlgInitializeLamp.dismiss(); // 취소 버튼을 눌렀을 때 발생하는 이벤트
+						}
+					},
+					getString(R.string.btn_device_initialize), //초기화 버튼
+					new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							String inputShortId = mDlgInitializeLamp.getInputText(); // 멤버 아이디를 기입하는 인풋
+							if (inputShortId.length() > 1 && mValidationMgr.isValidShortId(inputShortId)) {  // 길이가 1보다 크고, ~~~
+								if(inputShortId.equalsIgnoreCase(mPreferenceMgr.getShortId()))
+								{
+									((ConnectionActivity)mMainActivity).mServerQueryMgr.initDevice(
+											mLampInfo.type, // int type
+											mLampInfo.deviceId, // long type
+											mLampInfo.getEnc(), // string type
+											new ServerManager.ServerResponseListener() {
+												@Override
+												public void onReceive(int responseCode, String errCode, String data) {
+													if (InternetErrorCode.SUCCEEDED.equals(errCode)) { // 만약 error 코드가 succeeded라면,
+														((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_lamp_initialize_succeeded)); // 허브 초기화에 성공하였습니다.
+														mLampInfo = null;
+														mDlgInitializeLamp.dismiss();
+													} else {
+														((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_lamp_initialize_failed)); // 허브 초기화에 실패하였습니다.
+													}
+												}
+											});
+								} else {
+									((ConnectionActivity)mMainActivity).showToast(getString(R.string.warning_not_match_short_id)); // 회원 코드가 일치하지 않습니다.
+								}
+							}
+							else {
+								((ConnectionActivity)mMainActivity).showToast(getString(R.string.group_warning_invalid_short_id));// 올바른 회원코드 양식이 아닙니다.
+							}
+						}
+					});
+			mDlgInitializeLamp.setContentsGravity(Gravity.LEFT);
+			mDlgInitializeLamp.setInputMode(true);
+			mDlgInitializeLamp.setButtonColor(
+					getResources().getColor(R.color.colorTextPrimary),
+					getResources().getColor(R.color.colorTextWarning));
+		}
+
+		if (mTitle != null) {
+			tvTitle.setText(mTitle);
+		}
+
+		if (mButtonName != null) {
+			btnConnect.setText(mButtonName);
 		}
 
     }

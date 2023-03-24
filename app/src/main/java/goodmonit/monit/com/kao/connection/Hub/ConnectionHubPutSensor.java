@@ -301,40 +301,40 @@ public class ConnectionHubPutSensor extends BaseFragment {
 
 		if (mDlgInitializeHub == null) {
 			mDlgInitializeHub = new SimpleDialog(mContext,
-					getString(R.string.dialog_contents_sensor_already_registered_init)+mPreferenceMgr.getShortId(),
-					getString(R.string.btn_cancel),
+					getString(R.string.dialog_contents_sensor_already_registered_init)+mPreferenceMgr.getShortId(), //기기 초기화시에 ~~~
+					getString(R.string.btn_cancel), // 취소버튼
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							mDlgInitializeHub.dismiss();
+							mDlgInitializeHub.dismiss(); // 취소 버튼을 눌렀을 때 발생하는 이벤트
 						}
 					},
-					getString(R.string.btn_device_initialize),
+					getString(R.string.btn_device_initialize), //초기화 버튼
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							String inputShortId = mDlgInitializeHub.getInputText();
-							if (inputShortId.length() > 1 && mValidationMgr.isValidShortId(inputShortId)) {
+							String inputShortId = mDlgInitializeHub.getInputText(); // 멤버 아이디를 기입하는 인풋
+							if (inputShortId.length() > 1 && mValidationMgr.isValidShortId(inputShortId)) {  // 길이가 1보다 크고, ~~~
 								if(inputShortId.equalsIgnoreCase(mPreferenceMgr.getShortId()))
 								{
 									((ConnectionActivity)mMainActivity).mServerQueryMgr.initDevice(
-										mHubInfo.type,
-										mHubInfo.deviceId,
-										mHubInfo.getEnc(),
+										mHubInfo.type, // int type
+										mHubInfo.deviceId, // long type
+										mHubInfo.getEnc(), // string type
 										new ServerManager.ServerResponseListener() {
 											@Override
 											public void onReceive(int responseCode, String errCode, String data) {
-												if (InternetErrorCode.SUCCEEDED.equals(errCode)) {
-													((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_succeeded));
+												if (InternetErrorCode.SUCCEEDED.equals(errCode)) { // 만약 error 코드가 succeeded라면,
+													((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_succeeded)); // 허브 초기화에 성공하였습니다.
 													mHubInfo = null;
 													mDlgInitializeHub.dismiss();
 												} else {
-													((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_failed));
+													((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_failed)); // 허브 초기화에 실패하였습니다.
 												}
 											}
 										});
 								} else {
-									((ConnectionActivity)mMainActivity).showToast(getString(R.string.warning_not_match_short_id));
+									((ConnectionActivity)mMainActivity).showToast(getString(R.string.warning_not_match_short_id)); // 회원 코드가 일치하지 않습니다.
 								}
 								/*
 								mServerQueryMgr.checkSerialNumber(
@@ -368,7 +368,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 										});*/
 							}
 							else {
-								((ConnectionActivity)mMainActivity).showToast(getString(R.string.group_warning_invalid_short_id));
+								((ConnectionActivity)mMainActivity).showToast(getString(R.string.group_warning_invalid_short_id));// 올바른 회원코드 양식이 아닙니다.
 							}
 						}
 					});
