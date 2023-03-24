@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="goodmonit.monit.com.kao" >
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="goodmonit.monit.com.kao.MonitApplication"
+        android:launchMode="singleTask"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="whateverString">
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.SplashActivity"
+            android:theme="@style/AppTheme.FullScreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="goodmonit.monit.com.kao.activity.SigninActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.YKSigninActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.SchemeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="external"
+                    android:scheme="goodmonit" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="goodmonit.monit.com.kao.activity.YKWebviewActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.MainLightActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+        <!--android:theme="@style/AppLightTheme.NoActionBar" -->
+        <!--
+        android:launchMode="singleInstance"
+        -->
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.DeviceSensorActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.DeviceEnvironmentActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.DeviceLampActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.GroupActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.SettingSensorActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.SettingEnvironmentActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.SettingLampActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.dfu.FirmwareUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.dfu.HubFirmwareUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.dfu.LampFirmwareUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.dfu.PackageFirmwareUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.dfu.DfuNotificationActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="goodmonit.monit.com.kao.activity.SettingAccountActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.ForgotPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.ConnectionActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.GuideDirectConnectionActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.AgreementActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.GuideAllowPermission"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.StayActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:excludeFromRecents="true"
+            android:taskAffinity=":stay"/>
+
+        <activity android:name="goodmonit.monit.com.kao.activity.FloatActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.NuguActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.NoticeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="goodmonit.monit.com.kao.activity.SettingWidgetActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".activity.GoogleAssistantActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <service android:name="goodmonit.monit.com.kao.services.ConnectionManager">
+        </service>
+
+        <service
+            android:name="goodmonit.monit.com.kao.dfu.DfuService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="no.nordicsemi.android.action.DFU_UPLOAD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <service android:name="goodmonit.monit.com.kao.services.FCMListenerService" android:exported="false" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- Widget -->
+        <receiver android:name="goodmonit.monit.com.kao.provider.WidgetProvider2x1">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_2x1" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <!--
+        <receiver android:name=".provider.WidgetProvider2x2">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_2x2" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".provider.WidgetProvider2x3">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_2x3" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        -->
+
+        <!-- BootComplete -->
+        <receiver android:name="goodmonit.monit.com.kao.receiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:label="BootCompleteReceiver"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Pushy Declarations -->
+
+        <!-- Pushy Notification Receiver -->
+        <!-- Incoming push notifications will invoke the following BroadcastReceiver -->
+        <receiver android:name="goodmonit.monit.com.kao.receiver.PushyReceiver" android:exported="false">
+            <intent-filter>
+                <!-- Do not modify this -->
+                <action android:name="pushy.me" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Pushy Update Receiver -->
+        <!-- Do not modify - internal BroadcastReceiver that restarts the listener service -->
+        <receiver android:name="me.pushy.sdk.receivers.PushyUpdateReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Pushy Boot Receiver -->
+        <!-- Do not modify - internal BroadcastReceiver that restarts the listener service -->
+        <receiver android:name="me.pushy.sdk.receivers.PushyBootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Pushy Socket Service -->
+        <!-- Do not modify - internal socket service -->
+        <service android:name="me.pushy.sdk.services.PushySocketService"/>
+
+        <!-- End Pushy Declarations -->
+
+        <!-- Fabric Declaration Start -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="014bd82565079b6c3e93f8585ff7ad130803509a"
+            />
+        <!-- Fabric Declaration END -->
+    </application>
+
+</manifest>

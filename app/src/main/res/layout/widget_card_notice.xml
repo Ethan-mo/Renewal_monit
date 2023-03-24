@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="@dimen/margin_10"
+	android:layout_marginStart="@dimen/margin_10"
+	android:layout_marginEnd="@dimen/margin_10"
+	android:background="@color/colorWhite">
+
+	<ImageView
+		android:id="@+id/iv_widget_card_notice_icon"
+		android:layout_width="@dimen/margin_50"
+		android:layout_height="@dimen/margin_50"
+		android:layout_centerVertical="true"
+		android:layout_alignParentStart="true"
+		android:layout_marginStart="@dimen/margin_10"
+		android:background="@drawable/ic_sensor_diaper_warning_abnormal" />
+
+	<goodmonit.monit.com.kao.widget.NotoTextView
+		android:id="@+id/tv_widget_card_notice_description"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_toEndOf="@id/iv_widget_card_notice_icon"
+		android:padding="@dimen/padding_10"
+		android:textColor="@color/colorTextPrimary"
+		android:text="@string/device_sensor_disconnected"
+		android:textSize="@dimen/font_14sp" />
+
+	<goodmonit.monit.com.kao.widget.NotoButton
+		android:id="@+id/btn_widget_card_notice_right"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minHeight="0dp"
+		android:paddingBottom="@dimen/padding_10"
+		android:textColor="@color/colorPrimary"
+		android:textSize="@dimen/font_14sp"
+		android:fontFamily="medium"
+		android:text="@string/btn_cancel"
+		android:layout_alignParentEnd="true"
+		android:layout_below="@id/tv_widget_card_notice_description"
+		android:background="@color/colorTransparent" />
+
+	<goodmonit.monit.com.kao.widget.NotoButton
+		android:id="@+id/btn_widget_card_notice_left"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minHeight="0dp"
+		android:paddingBottom="@dimen/padding_10"
+		android:textColor="@color/colorPrimary"
+		android:textSize="@dimen/font_14sp"
+		android:fontFamily="medium"
+		android:layout_toStartOf="@id/btn_widget_card_notice_right"
+		android:layout_below="@id/tv_widget_card_notice_description"
+		android:text="@string/btn_ok"
+		android:background="@color/colorTransparent" />
+
+	<goodmonit.monit.com.kao.widget.NotoButton
+		android:id="@+id/btn_widget_card_notice_close"
+		android:layout_width="@dimen/new_mark_with_character_size"
+		android:layout_height="@dimen/new_mark_with_character_size"
+		android:layout_margin="@dimen/margin_6"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentTop="true"
+		android:background="@drawable/ic_edittext_clear"
+		android:visibility="gone"/>
+
+	<View style="@style/divider_horizontal_line"
+		android:layout_alignParentTop="true"/> <!-- Divider -->
+
+	<View style="@style/divider_horizontal_line"
+		android:layout_below="@id/btn_widget_card_notice_left"/> <!-- Divider -->
+
+	<View style="@style/divider_vertical_line"
+		android:layout_alignParentStart="true"/> <!-- Divider -->
+
+	<View style="@style/divider_vertical_line"
+		android:layout_alignParentEnd="true"/> <!-- Divider -->
+</RelativeLayout>

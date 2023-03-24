@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent"
+    android:padding="@dimen/padding_10">
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_guide_viewpager_prev"
+        android:layout_width="@dimen/padding_30"
+        android:layout_height="@dimen/padding_30"
+        android:background="@drawable/ic_direction_left_black_light"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_guide_viewpager_images"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/padding_30"
+        android:layout_marginEnd="@dimen/padding_30"/>
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_guide_viewpager_next"
+        android:layout_width="@dimen/padding_30"
+        android:layout_height="@dimen/padding_30"
+        android:background="@drawable/ic_direction_right_black_light"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_30"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator1"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator2"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator3"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator4"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator5"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator6"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator7"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator8"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator9"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_guide_viewpager_indicator10"
+            android:layout_width="@dimen/margin_6"
+            android:layout_height="@dimen/margin_6"
+            android:background="@drawable/bg_btn_oval_green_grey_selector"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

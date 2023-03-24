@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding_20"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:background="@color/colorBackgroundWhiteLight">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_put_sensor_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:text="@string/connection_hub_put_sensor_title"
+            android:fontFamily="medium" />
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_connection_hub_put_sensor_help"
+            android:layout_width="@dimen/help_button_size"
+            android:layout_height="@dimen/help_button_size"
+            android:layout_marginStart="@dimen/margin_6"
+            android:background="@drawable/ic_help"
+            android:layout_toEndOf="@id/tv_connection_hub_put_sensor_title" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_put_sensor_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_below="@id/tv_connection_hub_put_sensor_title"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_14sp"
+            android:text="@string/connection_hub_put_sensor_detail_step1" />
+
+        <ImageView
+            android:id="@+id/iv_connection_hub_put_sensor_animation"
+            android:layout_width="@dimen/connection_description_animation_size"
+            android:layout_height="@dimen/connection_description_animation_size"
+            android:src="@drawable/ani_hub_put_sensor1"
+            android:layout_marginTop="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_30"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_connection_hub_put_sensor_detail"/>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            style="@style/connection_next_button"
+            android:id="@+id/btn_connection_hub_put_sensor_connect"
+            android:text="@string/connection_start_connect"
+            android:layout_below="@id/iv_connection_hub_put_sensor_animation"
+            app:compoundDrawableWidth="@dimen/connection_next_button_direction_size"
+            app:compoundDrawableHeight="@dimen/connection_next_button_direction_size" />
+
+    </RelativeLayout>
+</ScrollView>

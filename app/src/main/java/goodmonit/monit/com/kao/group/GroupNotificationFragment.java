@@ -1,0 +1,157 @@
+package goodmonit.monit.com.kao.group;
+
+import android.os.Bundle;
+import android.os.Handler;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import goodmonit.monit.com.kao.R;
+import goodmonit.monit.com.kao.analytics.ScreenInfo;
+import goodmonit.monit.com.kao.constants.Configuration;
+import goodmonit.monit.com.kao.fragment.BaseFragment;
+import goodmonit.monit.com.kao.managers.DatabaseManager;
+import goodmonit.monit.com.kao.managers.NotiManager;
+import goodmonit.monit.com.kao.managers.PreferenceManager;
+import goodmonit.monit.com.kao.managers.ServerQueryManager;
+import goodmonit.monit.com.kao.message.CloudNotificationMessageAdapter;
+import goodmonit.monit.com.kao.message.NotificationMessage;
+import goodmonit.monit.com.kao.message.NotificationMsgAdapter;
+import goodmonit.monit.com.kao.message.RecyclerViewAdapter;
+import goodmonit.monit.com.kao.services.ConnectionManager;
+
+import static goodmonit.monit.com.kao.devices.DeviceType.SYSTEM;
+import static goodmonit.monit.com.kao.message.RecyclerViewAdapter.LOADING_MESSAGE_SEC;
+
+public class GroupNotificationFragment extends BaseFragment {
+	private static final String TAG = Configuration.BASE_TAG + "Notification";
+	private static final boolean DBG = Configuration.DBG;
+
+	private RecyclerView rvNotificationList;
+
+	private ArrayList<NotificationMessage> mNotificationMessageList;
+	private ArrayList<Integer> mFilteredTypeList;
+	private CloudNotificationMessageAdapter mMsgAdapter;
+	private TextView tvEmpty;
+	private long mLastLoadedMessageTimeMs;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		if (DBG) Log.i(TAG, "onCreateView");
+		View view = inflater.inflate(R.layout.content_group_notification, container, false);
+		mContext = inflater.getContext();
+		mPreferenceMgr = PreferenceManager.getInstance(getContext());
+		mServerQueryMgr = ServerQueryManager.getInstance(getContext());
+		mScreenInfo = new ScreenInfo(803);
+		mNotificationMessageList = new ArrayList<>();
+		mFilteredTypeList = new ArrayList<>();
+		mLastLoadedMessageTimeMs = System.currentTimeMillis();
+		_initView(view);
+
+		return view;
+	}
+
+	private void _initView(View v) {
+		tvEmpty = (TextView)v.findViewById(R.id.tv_group_notification_empty);
+
+		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+		rvNotificationList = (RecyclerView) v.findViewById(R.id.rv_group_notification_list);
+		mMsgAdapter = new CloudNotificationMessageAdapter(mContext);
+
+		loadMessageList();
+
+		rvNotificationList.setAdapter(mMsgAdapter);
+		mMsgAdapter.setLinearLayoutManager(linearLayoutManager);
+		mMsgAdapter.setRecyclerView(rvNotificationList);
+		mMsgAdapter.setOnLoadMoreListener(new NotificationMsgAdapter.OnLoadMoreListener() {
+			@Override
+			public void onLoadMore() {
+				if (DBG) Log.d(TAG, "onLoadMore");
+				mMsgAdapter.setProgressMore(true);
+				new Handler().postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						mMsgAdapter.setProgressMore(false);
+						ArrayList<NotificationMessage> messageList = DatabaseManager.getInstance(mContext).getCloudMessages(mLastLoadedMessageTimeMs, RecyclerViewAdapter.COUNT_LOADED_MESSAGES_AT_ONCE);
+						if (messageList != null && messageList.size() > 0) {
+							for (NotificationMessage mm : messageList) {
+								mNotificationMessageList.add(mm);
+								if (mLastLoadedMessageTimeMs > mm.timeMs) {
+									mLastLoadedMessageTimeMs = mm.timeMs;
+								}
+							}
+							mMsgAdapter.setMoreLoading(false);
+						}
+					}
+				}, LOADING_MESSAGE_SEC * 1000);
+			}
+		});
+		rvNotificationList.setLayoutManager(linearLayoutManager);
+		rvNotificationList.setItemAnimator(new DefaultItemAnimator());
+
+		showFilteredList();
+	}
+
+	public void loadMessageList() {
+		mNotificationMessageList.clear();
+		long latestCheckedNotificationIdx = mPreferenceMgr.getLatestCheckedNotificationIndex(SYSTEM, 0);
+		mPreferenceMgr.setLatestCheckedNotificationIndex(SYSTEM, 0, mPreferenceMgr.getLatestSavedNotificationIndex(SYSTEM, 0, 0));
+		mMsgAdapter.setLatestCheckedNotificationIndex(latestCheckedNotificationIdx);
+
+		ArrayList<NotificationMessage> messageList = DatabaseManager.getInstance(mContext).getCloudMessages(mLastLoadedMessageTimeMs, RecyclerViewAdapter.COUNT_LOADED_MESSAGES_AT_ONCE);
+		if (messageList != null && messageList.size() > 0) {
+			for (NotificationMessage mm : messageList) {
+				mNotificationMessageList.add(mm);
+				if (mLastLoadedMessageTimeMs > mm.timeMs) {
+					mLastLoadedMessageTimeMs = mm.timeMs;
+				}
+				if (DBG) Log.e(TAG, "updateMessageList : " + latestCheckedNotificationIdx + " / " + messageList.get(0).msgId);
+			}
+		}
+	}
+
+	public void showFilteredList() {
+		if (mNotificationMessageList == null) return;
+
+		if (mNotificationMessageList.size() == 0) {
+			mMsgAdapter.setList(mNotificationMessageList);
+			tvEmpty.setVisibility(View.VISIBLE);
+			return;
+		} else {
+			tvEmpty.setVisibility(View.GONE);
+		}
+
+		mMsgAdapter.setList(mNotificationMessageList);
+		mMsgAdapter.notifyDataSetChanged();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		if (DBG) Log.i(TAG, "onPause");
+		NotiManager.getInstance(mContext).cancelMessageNotification(0, 0);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		if (DBG) Log.i(TAG, "onResume");
+		mMainActivity = getActivity();
+		if (ConnectionManager.getInstance() != null) {
+			ConnectionManager.getInstance().getCloudNotificationFromCloudV2();
+		}
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (DBG) Log.i(TAG, "onDestroy");
+	}
+}

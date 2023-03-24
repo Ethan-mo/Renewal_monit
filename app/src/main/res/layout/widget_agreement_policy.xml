@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_widget_agreement_policy_agree"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/signup_item_height"
+        android:paddingStart="@dimen/padding_15"
+        android:paddingEnd="@dimen/padding_15"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/legal_agree_all"
+        android:gravity="start|center_vertical"
+        android:background="@color/colorTransparent"
+        android:drawableLeft="@drawable/btn_radio_default"
+        app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+        app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+        android:drawablePadding="@dimen/padding_15" />
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_widget_agreement_policy_link"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/signup_item_height"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_12sp"
+        android:text="@string/btn_show"
+        android:background="@color/colorTransparent"
+        app:setUnderline="true"/>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_widget_agreement_policy_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_50"
+        android:layout_below="@id/btn_widget_agreement_policy_agree"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:textColor="@color/colorTextWarning"
+        android:textSize="@dimen/font_12sp"
+        android:text="@string/account_warning_gender"
+        android:visibility="gone"/>
+
+    <View style="@style/divider_horizontal_line"
+        android:id="@+id/v_widget_agreement_policy_underline"
+        android:layout_marginStart="@dimen/margin_40"
+        android:layout_below="@id/tv_widget_agreement_policy_warning"/>
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:validation="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerPrimaryLight" />
+
+    <goodmonit.monit.com.kao.widget.ValidationEditText
+        android:id="@+id/vet_input_elderly_info_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="이름"
+        validation:textHint="누가 이 센서를 착용하시나요?"
+        validation:textWarning="@string/account_hint_baby_name"/>
+
+    <goodmonit.monit.com.kao.widget.ValidationRadio
+        android:id="@+id/vr_input_elderly_info_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="성별"
+        validation:textWarning="@string/account_warning_gender"
+        validation:textItem1="남성"
+        validation:textItem2="여성"
+        validation:showUnderline="true"/>
+
+    <goodmonit.monit.com.kao.widget.ValidationBirthdayYYMMDD
+        android:id="@+id/vtv_input_elderly_info_bday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="생년월일"
+        validation:textWarning="@string/account_warning_birthday"
+        validation:textContents="@string/account_hint_birthday"
+        validation:showUnderline="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerPrimaryLight" />
+</LinearLayout>
+
+

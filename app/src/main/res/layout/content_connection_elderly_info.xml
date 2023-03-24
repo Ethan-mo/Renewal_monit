@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_connection_monit_baby_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/signup_parent_icon_size"
+                android:layout_height="@dimen/signup_parent_icon_size"
+                android:background="@drawable/ic_group_grandpa_activated"
+                android:layout_gravity="center_horizontal"/>
+
+            <ImageView
+                android:layout_width="@dimen/signup_parent_icon_size"
+                android:layout_height="@dimen/signup_parent_icon_size"
+                android:background="@drawable/ic_group_grandma_activated"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_monit_baby_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_20"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_16sp"
+                android:text="환자 정보 등록"
+                android:fontFamily="medium" />
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_connection_monit_baby_info_help"
+                android:layout_width="@dimen/help_button_size"
+                android:layout_height="@dimen/help_button_size"
+                android:layout_marginStart="@dimen/margin_6"
+                android:background="@drawable/ic_help" />
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_monit_baby_info_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_6"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_14sp"
+            android:text="센서를 사용할 환자 정보를 등록해주세요. 입력된 정보에 따라 센서의 정확도가 차이날 수 있습니다." />
+
+        <include layout="@layout/widget_input_elderlyinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>
+

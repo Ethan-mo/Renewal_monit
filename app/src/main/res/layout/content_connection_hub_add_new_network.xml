@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding_20"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_add_new_network_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_16sp"
+        android:text="@string/connection_hub_add_new_network_title"
+        android:fontFamily="medium" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_add_new_network_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:paddingStart="@dimen/padding_20"
+        android:layout_below="@id/tv_connection_hub_add_new_network_title"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_hub_add_new_network_detail" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_add_new_network_detail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_below="@id/tv_connection_hub_add_new_network_detail"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_hub_select_ap_detail_etc" />
+
+    <RelativeLayout
+        android:id="@+id/rctn_connection_hub_add_new_network_input_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/connection_input_ap_password_height"
+        android:layout_below="@id/tv_connection_hub_add_new_network_detail2"
+        android:background="@color/colorWhite">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_add_new_network"
+            android:layout_width="@dimen/connection_input_ap_info_title_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="@dimen/padding_20"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/connection_hub_network_name" />
+
+        <goodmonit.monit.com.kao.widget.NotoEditText
+            android:id="@+id/et_connection_hub_add_new_network_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/tv_connection_hub_add_new_network"
+            android:background="@color/colorTransparent"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPositive"
+            android:hint="@string/connection_hub_hint_input_network_name"
+            android:textColorHint="@color/colorTextPrimaryLight"
+            android:fontFamily="medium"
+            android:text=""/>
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentTop="true"/>
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rctn_connection_hub_add_new_network_security"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/connection_input_ap_password_height"
+        android:layout_below="@id/rctn_connection_hub_add_new_network_input_name"
+        android:layout_marginTop="@dimen/connection_input_ap_password_height"
+        android:background="@drawable/bg_btn_white_darklight_selector"
+        android:clickable="true">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_add_new_network_security"
+            android:layout_width="@dimen/connection_input_ap_info_title_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="@dimen/padding_20"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/connection_hub_network_security" />
+
+        <ImageView
+            android:id="@+id/iv_connection_hub_add_new_network_security_direction"
+            android:layout_width="@dimen/connection_select_new_network_security_direction_size"
+            android:layout_height="@dimen/connection_select_new_network_security_direction_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:src="@drawable/ic_direction_right_black_light"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_add_new_network_security_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/iv_connection_hub_add_new_network_security_direction"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:text="@string/connection_hub_network_security_none" />
+
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentTop="true"/>
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rctn_connection_hub_add_new_network_input_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/connection_input_ap_password_height"
+        android:layout_below="@id/rctn_connection_hub_add_new_network_security"
+        android:background="@color/colorWhite"
+        android:visibility="gone">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_hub_add_new_network_input_ap_password"
+            android:layout_width="@dimen/connection_input_ap_info_title_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="@dimen/padding_20"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/connection_hub_ap_password" />
+
+        <goodmonit.monit.com.kao.widget.NotoEditText
+            android:id="@+id/et_connection_hub_add_new_network_input_ap_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/tv_connection_hub_add_new_network_input_ap_password"
+            android:background="@color/colorTransparent"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPositive"
+            android:hint="@string/connection_hub_hint_input_ap_password"
+            android:textColorHint="@color/colorTextPrimaryLight"
+            android:fontFamily="medium"
+            android:text=""/>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_connection_hub_add_new_network_input_ap_password_show"
+            android:layout_width="@dimen/connection_input_ap_show_password_size"
+            android:layout_height="@dimen/connection_input_ap_show_password_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@drawable/btn_edittext_show_password_green"/>
+
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

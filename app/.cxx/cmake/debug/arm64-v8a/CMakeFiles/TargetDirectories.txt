@@ -1,0 +1,5 @@
+C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/server-lib.dir
+C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir
+C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/em-lib.dir
+C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir

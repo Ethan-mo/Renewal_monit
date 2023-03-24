@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <ViewFlipper
+        android:id="@+id/vf_connection_monit_package_how_to_attach"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_connection_monit_package_how_to_attach1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/ani_monit_kc_attach1"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_monit_package_how_to_attach_description1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:text="@string/connection_monit_sensor_attaching_guide_cradle_description"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_connection_monit_package_how_to_attach2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/ani_monit_kc_attach2"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_monit_package_how_to_attach_description2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:text="@string/connection_monit_sensor_attaching_guide_diaper_description"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <View style="@style/divider_horizontal_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_monit_package_how_to_attach_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_40"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/connection_monit_sensor_attaching_guide_title"
+                android:gravity="center"
+                android:fontFamily="medium" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_monit_package_how_to_attach_title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_20sp"
+                android:text="@string/connection_monit_sensor_attaching_guide_diaper_title"
+                android:gravity="center"
+                android:fontFamily="medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_connection_monit_package_how_to_attach_close"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_60"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_18sp"
+        android:text="@string/btn_close"
+        android:fontFamily="medium"
+        android:background="@drawable/bg_btn_transgreen_green_selector"
+        android:minHeight="0dp"
+        android:layout_alignParentBottom="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/btn_connection_monit_package_how_to_attach_close"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/margin_15">
+
+        <ImageView
+            android:id="@+id/iv_connection_monit_package_how_to_attach_dot1"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@drawable/bg_btn_oval_green_grey_selector" />
+
+        <ImageView
+            android:id="@+id/iv_connection_monit_package_how_to_attach_dot2"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="@dimen/margin_10"
+            android:background="@drawable/bg_btn_oval_green_grey_selector" />
+
+    </LinearLayout>
+
+</RelativeLayout>

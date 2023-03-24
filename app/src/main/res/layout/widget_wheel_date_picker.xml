@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/setting_device_row_wheel_height"
+    android:layout_below="@id/rctn_widget_setting_button">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <goodmonit.monit.com.kao.widget.WheelView
+            xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/wv_widget_wheel_date_picker_item1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            wheelview:wvRowHeight="@dimen/setting_device_row_wheel_each_row_height"
+            wheelview:wvRowCount="5"
+            wheelview:wvSelectedTextColor="@color/colorTextPrimary"
+            wheelview:wvSelectedTextSize="@dimen/font_16sp"
+            wheelview:wvDefaultTextColor="@color/colorTextPrimaryLight"
+            wheelview:wvDefaultTextSize="@dimen/font_14sp" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_wheel_date_picker_item1_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/time_year_short"/>
+
+        <goodmonit.monit.com.kao.widget.WheelView
+            xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/wv_widget_wheel_date_picker_item2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            wheelview:wvRowHeight="@dimen/setting_device_row_wheel_each_row_height"
+            wheelview:wvRowCount="5"
+            wheelview:wvSelectedTextColor="@color/colorTextPrimary"
+            wheelview:wvSelectedTextSize="@dimen/font_16sp"
+            wheelview:wvDefaultTextColor="@color/colorTextPrimaryLight"
+            wheelview:wvDefaultTextSize="@dimen/font_14sp" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_wheel_date_picker_item2_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/time_month_short"/>
+
+        <goodmonit.monit.com.kao.widget.WheelView
+            xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/wv_widget_wheel_date_picker_item3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            wheelview:wvRowHeight="@dimen/setting_device_row_wheel_each_row_height"
+            wheelview:wvRowCount="5"
+            wheelview:wvSelectedTextColor="@color/colorTextPrimary"
+            wheelview:wvSelectedTextSize="@dimen/font_16sp"
+            wheelview:wvDefaultTextColor="@color/colorTextPrimaryLight"
+            wheelview:wvDefaultTextSize="@dimen/font_14sp" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_wheel_date_picker_item3_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/time_day_short"/>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <View
+            android:id="@+id/v_widget_wheel_date_picker_divider_top"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+
+        <View
+            android:id="@+id/v_widget_wheel_date_picker_divider_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"
+            android:layout_below="@id/v_widget_wheel_date_picker_divider_top"
+            android:layout_marginTop="@dimen/font_30sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

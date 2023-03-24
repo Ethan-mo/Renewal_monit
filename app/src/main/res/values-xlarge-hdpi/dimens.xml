@@ -1,0 +1,263 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">25dp</dimen>
+    <dimen name="activity_vertical_margin">25dp</dimen>
+    <dimen name="nav_header_vertical_spacing">25dp</dimen>
+    <dimen name="nav_header_height">256dp</dimen>
+    <dimen name="fab_margin">25dp</dimen>
+
+    <dimen name="toolbar_height">70dp</dimen>
+    <dimen name="toolbar_logo_size">59dp</dimen>
+    <dimen name="toolbar_image_button_size">38dp</dimen>
+    <dimen name="toolbar_button_width">160dp</dimen>
+
+    <dimen name="tabbar_device_detail">64dp</dimen>
+
+    <dimen name="tabbar_height">75dp</dimen>
+    <dimen name="tabbar_sensor_width">46dp</dimen>
+    <dimen name="tabbar_sensor_height">46dp</dimen>
+    <dimen name="tabbar_message_width">38dp</dimen>
+    <dimen name="tabbar_message_height">35dp</dimen>
+    <dimen name="tabbar_diary_width">28dp</dimen>
+    <dimen name="tabbar_diary_height">38dp</dimen>
+    <dimen name="tabbar_user_width">38dp</dimen>
+    <dimen name="tabbar_user_height">38dp</dimen>
+    <dimen name="tabbar_setting_width">38dp</dimen>
+    <dimen name="tabbar_setting_height">38dp</dimen>
+
+    <dimen name="dialog_width">422dp</dimen>
+    <dimen name="dialog_input_width">374dp</dimen>
+    <dimen name="dialog_input_height">40dp</dimen>
+    <dimen name="dialog_title_section_height">48dp</dimen>
+    <dimen name="dialog_button_section_height">70dp</dimen>
+    <dimen name="dialog_title_section_margin_bottom">16dp</dimen>
+    <dimen name="dialog_contents_section_margin_top_bottom">32dp</dimen>
+    <dimen name="dialog_contents_section_margin_start_end">24dp</dimen>
+    <dimen name="dialog_progress_bar_size">16dp</dimen>
+    <dimen name="dialog_progress_circle_size">35dp</dimen>
+
+    <dimen name="indicator_section_height">70dp</dimen>
+    <dimen name="indicator_focused_size">38dp</dimen>
+    <dimen name="indicator_not_focused_size">19dp</dimen>
+    <dimen name="indicator_path_width">128dp</dimen>
+
+    <!-- Signin Activity -->
+    <dimen name="signin_logo_image_width">236dp</dimen>
+    <dimen name="signin_logo_image_height">252dp</dimen>
+    <dimen name="signin_logo_image_margin_top">96dp</dimen>
+    <dimen name="signin_logo_image_margin_bottom">80dp</dimen>
+
+    <dimen name="signin_edittext_category_icon_size">40dp</dimen>
+    <dimen name="signin_edittext_clear_icon_size">25dp</dimen>
+    <dimen name="signin_edittext_show_icon_size">25dp</dimen>
+    <dimen name="signin_edittext_section_width">480dp</dimen>
+    <dimen name="signin_edittext_section_height">70dp</dimen>
+    <dimen name="signin_edittext_section_margin_bottom">32dp</dimen>
+
+    <!-- Signin YK Activity -->
+    <dimen name="signin_yk_button_width">448dp</dimen>
+    <dimen name="signin_yk_button_height">80dp</dimen>
+
+    <!-- Signup Activity -->
+    <dimen name="signup_divider_height">24dp</dimen>
+    <dimen name="signup_item_height">76dp</dimen>
+    <dimen name="signup_item_agreement_height">64dp</dimen>
+    <dimen name="signup_validation_check_section_size">76dp</dimen>
+    <dimen name="signup_item_title_width">160dp</dimen>
+    <dimen name="signup_logo_image_size">200dp</dimen>
+    <dimen name="signup_logo_image_section_margin_top">67dp</dimen>
+    <dimen name="signup_logo_image_section_margin_bottom">57dp</dimen>
+    <dimen name="signup_parent_icon_size">120dp</dimen>
+    <dimen name="signup_date_picker_height">240dp</dimen>
+    <dimen name="signup_date_picker_row_height">48dp</dimen>
+    <dimen name="signup_indicator_section_height">70dp</dimen>
+
+    <dimen name="signup_radio_button_size">28dp</dimen>
+    <dimen name="signup_description_max_width">444dp</dimen>
+
+    <dimen name="below_next_button_width">400dp</dimen>
+    <dimen name="below_next_button_height">64dp</dimen>
+    <dimen name="below_next_button_margin">48dp</dimen>
+
+    <!-- Main Light -->
+    <dimen name="main_light_empty_text_height">128dp</dimen>
+    <dimen name="main_light_empty_button_image_size">91dp</dimen>
+    <dimen name="main_light_empty_register_button_height">136dp</dimen>
+
+    <dimen name="device_status_section_height">166dp</dimen>
+    <dimen name="device_status_section_title_height">67dp</dimen>
+    <dimen name="device_status_device_icon_size">112dp</dimen>
+    <dimen name="device_status_device_connection_icon_size">24dp</dimen>
+    <dimen name="device_status_device_battery_icon_size">48dp</dimen>
+    <dimen name="device_status_item_icon_size">88dp</dimen>
+
+    <dimen name="device_status_environment_icon_size">288dp</dimen>
+    <dimen name="device_status_environment_score_section_height">108dp</dimen>
+
+    <dimen name="device_status_diaper_background_section_height">500dp</dimen>
+    <dimen name="device_status_diaper_icon_size">288dp</dimen>
+    <dimen name="device_status_diaper_icon_extra_size">102dp</dimen>
+    <dimen name="device_status_diaper_icon_section_width">368dp</dimen>
+    <dimen name="device_status_diaper_icon_section_height">288dp</dimen>
+    <dimen name="device_status_diaper_status_section_height">227dp</dimen>
+    <dimen name="device_status_diaper_status_icon_size">72dp</dimen>
+    <dimen name="device_status_diaper_changed_section_height">92dp</dimen>
+    <dimen name="device_status_diaper_changed_button_width">240dp</dimen>
+    <dimen name="device_status_diaper_changed_button_height">80dp</dimen>
+    <dimen name="device_status_diaper_init_icon_size">48dp</dimen>
+
+    <dimen name="device_status_lamp_icon_section_size">508dp</dimen>
+    <dimen name="device_status_lamp_item_icon_section_width">512dp</dimen>
+    <dimen name="device_status_lamp_item_icon_section_height">320dp</dimen>
+    <dimen name="device_status_lamp_icon_size">252dp</dimen>
+    <dimen name="device_status_lamp_item_icon_size">64dp</dimen>
+    <dimen name="device_status_lamp_item_row_height">134dp</dimen>
+    <dimen name="device_status_lamp_item_button_size">105dp</dimen>
+    <dimen name="device_status_lamp_deactivated_background_section_size">275dp</dimen>
+    <dimen name="device_status_lamp_timer_icon_width">40dp</dimen>
+    <dimen name="device_status_lamp_timer_icon_height">40dp</dimen>
+    <dimen name="device_status_lamp_timer_button_width">128dp</dimen>
+    <dimen name="device_status_lamp_timer_button_height">64dp</dimen>
+    <dimen name="device_status_lamp_timer_wheelview_height">144dp</dimen>
+
+    <dimen name="connection_row_divider_height">73dp</dimen>
+    <dimen name="connection_row_device_button_height">128dp</dimen>
+    <dimen name="connection_row_direction_size">38dp</dimen>
+    <dimen name="connection_row_device_icon_size">96dp</dimen>
+    <dimen name="connection_row_connect_button_height">64dp</dimen>
+    <dimen name="connection_description_animation_size">400dp</dimen>
+    <dimen name="connection_scanned_ap_list_section_height">499dp</dimen>
+    <dimen name="connection_scanned_ap_list_row_height">67dp</dimen>
+    <dimen name="connection_scanned_ap_list_row_security_size">25dp</dimen>
+    <dimen name="connection_scanned_ap_list_row_wifi_signal_size">25dp</dimen>
+    <dimen name="connection_select_new_network_security_direction_size">32dp</dimen>
+    <dimen name="connection_input_ap_show_password_size">25dp</dimen>
+    <dimen name="connection_input_ap_password_height">76dp</dimen>
+    <dimen name="connection_input_ap_info_title_width">192dp</dimen>
+
+    <!-- Notification -->
+    <dimen name="notification_row_date_height">57dp</dimen>
+    <dimen name="notification_row_height">100dp</dimen>
+    <dimen name="notification_row_icon_size">72dp</dimen>
+    <dimen name="notification_row_icon_right_margin">104dp</dimen>
+    <dimen name="notification_filter_icon_section_height">120dp</dimen>
+    <dimen name="notification_filter_icon_size">88dp</dimen>
+
+    <!-- Font -->
+    <dimen name="font_5_5sp">8sp</dimen>
+    <dimen name="font_6_5sp">10sp</dimen>
+    <dimen name="font_8sp">13sp</dimen>
+    <dimen name="font_9sp">14sp</dimen>
+    <dimen name="font_10sp">16sp</dimen>
+    <dimen name="font_11sp">17sp</dimen>
+    <dimen name="font_12sp">19sp</dimen>
+    <dimen name="font_13_5sp">21sp</dimen>
+    <dimen name="font_14sp">22sp</dimen>
+    <dimen name="font_16sp">25sp</dimen>
+    <dimen name="font_18sp">28sp</dimen>
+    <dimen name="font_20sp">32sp</dimen>
+    <dimen name="font_24sp">38sp</dimen>
+    <dimen name="font_30sp">48sp</dimen>
+    <dimen name="font_68sp">108sp</dimen>
+
+    <!-- Setting -->
+    <dimen name="setting_device_row_height">76dp</dimen>
+    <dimen name="setting_device_row_direction_size">32dp</dimen>
+    <dimen name="setting_device_row_switch_track_height">48dp</dimen>
+    <dimen name="setting_device_row_switch_track_width">81dp</dimen>
+    <dimen name="setting_device_row_switch_thumb_size">44dp</dimen>
+    <dimen name="setting_device_row_switch_thumb_radius_size">22dp</dimen>
+    <dimen name="setting_device_row_text_divider_height">83dp</dimen>
+    <dimen name="setting_device_row_wheel_height">240dp</dimen>
+    <dimen name="setting_device_row_wheel_each_row_height">48dp</dimen>
+    <dimen name="setting_device_row_wheel_width">240dp</dimen>
+    <dimen name="setting_device_row_contents_max_width">192dp</dimen>
+    <dimen name="setting_device_detail_row_height">118dp</dimen>
+    <dimen name="setting_device_icon_size">96dp</dimen>
+    <dimen name="setting_device_detail_master">54dp</dimen>
+    <dimen name="setting_divider_height">32dp</dimen>
+    <dimen name="setting_footer_height">80dp</dimen>
+
+    <dimen name="graph_tab_section_height">139dp</dimen>
+    <dimen name="graph_tab_icon_size">72dp</dimen>
+    <dimen name="graph_date_section_height">96dp</dimen>
+    <dimen name="graph_value_section_height">124dp</dimen>
+    <dimen name="graph_date_direction_size">32dp</dimen>
+    <dimen name="graph_duration_tab_section_width">336dp</dimen>
+    <dimen name="graph_duration_tab_section_height">42dp</dimen>
+    <dimen name="graph_duration_tab_selected_width">163dp</dimen>
+    <dimen name="graph_duration_tab_selected_height">35dp</dimen>
+
+    <dimen name="group_member_section_height">118dp</dimen>
+    <dimen name="group_member_leader_icon_size">54dp</dimen>
+
+    <!-- Betatest -->
+    <dimen name="betatest_panel_titlebar_height">64dp</dimen>
+    <dimen name="betatest_panel_titlebar_direction_size">32dp</dimen>
+    <dimen name="betatest_panel_row_height">54dp</dimen>
+    <dimen name="betatest_panel_input_button_size">80dp</dimen>
+    <dimen name="betatest_notification_feedback_button_height">54dp</dimen>
+
+    <!-- User Fragment -->
+    <dimen name="userinfo_main_section_height">396dp</dimen>
+    <dimen name="userinfo_profile_section_height">233dp</dimen>
+    <dimen name="userinfo_profile_image_size">160dp</dimen>
+    <dimen name="userinfo_group_section_width">496dp</dimen>
+    <dimen name="userinfo_group_section_height">136dp</dimen>
+    <dimen name="userinfo_group_titlebar_height">35dp</dimen>
+    <dimen name="userinfo_group_member_section_width">113dp</dimen>
+    <dimen name="userinfo_group_member_section_height">100dp</dimen>
+    <dimen name="userinfo_group_member_section_margin">8dp</dimen>
+    <dimen name="userinfo_divider_height">40dp</dimen>
+    <dimen name="userinfo_button_icon_size">67dp</dimen>
+    <dimen name="userinfo_button_height">67dp</dimen>
+
+    <dimen name="padding_3">5dp</dimen>
+    <dimen name="padding_5">8dp</dimen>
+    <dimen name="padding_10">16dp</dimen>
+    <dimen name="padding_15">24dp</dimen>
+    <dimen name="padding_20">32dp</dimen>
+    <dimen name="padding_30">48dp</dimen>
+    <dimen name="padding_40">64dp</dimen>
+    <dimen name="padding_100">160dp</dimen>
+
+    <dimen name="margin_6">9dp</dimen>
+    <dimen name="margin_10">16dp</dimen>
+    <dimen name="margin_15">24dp</dimen>
+    <dimen name="margin_20">32dp</dimen>
+    <dimen name="margin_25">40dp</dimen>
+    <dimen name="margin_30">48dp</dimen>
+    <dimen name="margin_40">64dp</dimen>
+    <dimen name="margin_50">80dp</dimen>
+    <dimen name="margin_60">96dp</dimen>
+    <dimen name="margin_70">112dp</dimen>
+    <dimen name="margin_100">160dp</dimen>
+
+    <dimen name="float_group_button_size">105dp</dimen>
+    <dimen name="group_detail_row_icon_size">96dp</dimen>
+    <dimen name="group_detail_row_add_icon_size">48dp</dimen>
+
+    <dimen name="new_mark_with_character_size">38dp</dimen>
+    <dimen name="new_mark_without_character_big_size">16dp</dimen>
+    <dimen name="new_mark_without_character_small_size">9dp</dimen>
+
+    <dimen name="guide_direct_connection_image_height">448dp</dimen>
+
+    <dimen name="float_notification_add_button_size">144dp</dimen>
+    <dimen name="float_notification_icon_size">106dp</dimen>
+
+    <dimen name="image_toast_size">224dp</dimen>
+
+    <dimen name="widget_size_x1">71dp</dimen>
+    <dimen name="widget_size_x2">146dp</dimen>
+    <dimen name="widget_size_x3">220dp</dimen>
+    <dimen name="widget_size_x4">294dp</dimen>
+
+    <dimen name="tooltip_box_min_width">320dp</dimen>
+    <dimen name="tooltip_box_close_button_size">40dp</dimen>
+
+    <dimen name="help_button_size">40dp</dimen>
+    <dimen name="graph_height">400dp</dimen>
+
+    <dimen name="diary_input_button_size">88dp</dimen>
+</resources>

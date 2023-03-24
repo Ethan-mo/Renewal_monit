@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/setting_device_detail_row_height">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_group_detail_share_device_icon1"
+                android:layout_width="@dimen/group_detail_row_icon_size"
+                android:layout_height="@dimen/group_detail_row_icon_size"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_device_sensor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_group_detail_share_device_icon1"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_share_device_type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:textSize="@dimen/font_16sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_type_diaper_sensor"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_share_device_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="@string/device_type_diaper_sensor"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <View style="@style/divider_vertical_line_with_margin" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_group_detail_share_device_icon2"
+                android:layout_width="@dimen/group_detail_row_icon_size"
+                android:layout_height="@dimen/group_detail_row_icon_size"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_centerVertical="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_group_detail_share_device_icon2"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_share_device_type2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:textSize="@dimen/font_16sp"
+                    android:textColor="@color/colorTextPrimary"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_share_device_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <View style="@style/divider_horizontal_line"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

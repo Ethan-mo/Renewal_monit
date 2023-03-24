@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_notification_row_feedback_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_row_date_height"
+        android:gravity="bottom"
+        android:paddingStart="@dimen/padding_10"
+        android:paddingBottom="@dimen/padding_5"
+        android:background="@color/colorBackgroundWhiteLight"
+        android:textSize="@dimen/font_12sp"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:text="2017.07.02"/>
+
+    <ImageView
+        android:id="@+id/iv_notification_row_feedback_new_mark"
+        android:layout_width="@dimen/new_mark_without_character_small_size"
+        android:layout_height="@dimen/new_mark_without_character_small_size"
+        android:background="@drawable/ic_new_mark_no_char"
+        android:layout_margin="@dimen/margin_10" />
+
+    <ImageView
+        android:id="@+id/iv_notification_row_feedback_icon"
+        android:layout_width="@dimen/notification_row_icon_size"
+        android:layout_height="@dimen/notification_row_icon_size"
+        android:background="@drawable/ic_notification_diaper_pee"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_centerVertical="true" />
+
+    <ViewSwitcher
+        android:id="@+id/vs_widget_notification_row_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_row_height"
+        android:layout_toEndOf="@id/iv_notification_row_feedback_icon">
+
+        <LinearLayout
+            android:id="@+id/lctn_notification_row_feedback_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_row_feedback_description"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:fontFamily="medium"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/device_sensor_diaper_status_pee_detail"
+                android:layout_centerVertical="true" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_row_feedback_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_row_feedback_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:text="오전 03:20"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lctn_notification_row_feedback_answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <goodmonit.monit.com.kao.widget.NotoButton
+                    android:id="@+id/btn_notification_row_feedback_answer_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/betatest_panel_row_height"
+                    android:minWidth="0dp"
+                    android:paddingStart="@dimen/padding_10"
+                    android:paddingEnd="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:textSize="@dimen/font_12sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:fontFamily="medium"
+                    android:text="@string/feedback_true"
+                    android:background="@drawable/bg_btn_radius_white_solid_shadow_green_border_selector"
+                    android:visibility="gone"/>
+
+                <goodmonit.monit.com.kao.widget.NotoButton
+                    android:id="@+id/btn_notification_row_feedback_answer_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/betatest_panel_row_height"
+                    android:minWidth="0dp"
+                    android:paddingStart="@dimen/padding_10"
+                    android:paddingEnd="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:textSize="@dimen/font_12sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:fontFamily="medium"
+                    android:text="@string/feedback_false"
+                    android:background="@drawable/bg_btn_radius_white_solid_shadow_green_border_selector"
+                    android:visibility="gone"/>
+
+                <goodmonit.monit.com.kao.widget.NotoButton
+                    android:id="@+id/btn_notification_row_feedback_answer_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/betatest_panel_row_height"
+                    android:minWidth="0dp"
+                    android:paddingStart="@dimen/padding_10"
+                    android:paddingEnd="@dimen/padding_10"
+                    android:textSize="@dimen/font_12sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:fontFamily="medium"
+                    android:text="@string/feedback_dk"
+                    android:background="@drawable/bg_btn_radius_white_solid_shadow_green_border_selector"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_notification_row_feedback_answer_modify"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:minWidth="0dp"
+                android:background="@drawable/ic_edit"
+                android:visibility="gone"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_notification_row_feedback_answer_remove"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:minWidth="0dp"
+                android:background="@drawable/ic_trash"/>
+
+        </LinearLayout>
+
+    </ViewSwitcher>
+
+    <View
+        android:id="@+id/v_notification_row_feedback_continuous_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_marginStart="@dimen/notification_row_icon_right_margin"
+        android:layout_alignParentBottom="true" />
+
+    <View
+        android:id="@+id/v_notification_row_feedback_above_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_alignParentTop="true"/>
+
+    <View
+        android:id="@+id/v_notification_row_feedback_below_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:padding="@dimen/padding_20">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_guide_allow_permission_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_permission_title"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="medium"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_guide_allow_permission_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_permission_description"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_below="@id/tv_guide_allow_permission_title"
+            android:layout_alignParentStart="true"/>
+
+        <LinearLayout
+            android:id="@+id/lctn_guide_allow_permission_description1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_below="@id/tv_guide_allow_permission_description"
+            android:gravity="start|center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_guide_allow_permission_description1"
+                android:layout_width="@dimen/signup_validation_check_section_size"
+                android:layout_height="@dimen/signup_validation_check_section_size"
+                android:background="@drawable/ic_validation_check_valid"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_guide_allow_permission_description1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guide_permission_title1"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"/>
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_guide_allow_permission_description1_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_permission_description1"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_below="@id/lctn_guide_allow_permission_description1"/>
+
+        <LinearLayout
+            android:id="@+id/lctn_guide_allow_permission_description2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_below="@id/tv_guide_allow_permission_description1_description"
+            android:gravity="start|center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_guide_allow_permission_description2"
+                android:layout_width="@dimen/signup_validation_check_section_size"
+                android:layout_height="@dimen/signup_validation_check_section_size"
+                android:background="@drawable/ic_validation_check_valid"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_guide_allow_permission_description2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guide_permission_title2"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"/>
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_guide_allow_permission_description2_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_permission_description2"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginStart="@dimen/margin_50"
+            android:layout_below="@id/lctn_guide_allow_permission_description2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_guide_allow_permission_confirm"
+                android:layout_width="@dimen/dfu_update_button_width"
+                android:layout_height="@dimen/dfu_update_button_height"
+                android:background="@drawable/bg_btn_radius_green_darkgreen_selector"
+                android:gravity="center"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="medium"
+                android:text="@string/btn_ok"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

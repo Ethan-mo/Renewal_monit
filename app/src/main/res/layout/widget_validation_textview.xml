@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rctn_validation_textview_checked"
+        android:layout_width="@dimen/signup_validation_check_section_size"
+        android:layout_height="@dimen/signup_validation_check_section_size">
+
+        <ImageView
+            android:id="@+id/iv_validation_textview_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_validation_check_default"/>
+    </RelativeLayout>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_validation_textview_title"
+        android:layout_width="@dimen/signup_item_title_width"
+        android:layout_height="@dimen/signup_item_height"
+        android:layout_toEndOf="@id/rctn_validation_textview_checked"
+        android:gravity="center_vertical"
+        android:text="Email"
+        android:textSize="@dimen/font_14sp"
+        android:textColor="@color/colorTextPrimary" />
+
+    <RelativeLayout
+        android:id="@+id/rctn_validation_textview_contents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_validation_textview_title">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_validation_textview_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:minHeight="@dimen/signup_item_height"
+            android:paddingTop="@dimen/padding_15"
+            android:paddingBottom="@dimen/padding_15"
+            android:lineSpacingMultiplier="2"
+            android:textColor="@color/colorTextPrimary"
+            android:textColorLink="@color/colorTextPrimary"
+            android:textSize="@dimen/font_12sp"
+            android:text="Please input email type" />
+
+        <LinearLayout
+            android:id="@+id/lctn_validation_textview_agreement"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/signup_item_height"
+            android:layout_below="@+id/tv_validation_textview_text"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View style="@style/divider_horizontal_line" />
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/btn_validation_textview_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/padding_5"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_10"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/legal_agree_all"
+                android:background="@drawable/bg_dialog_white_radius"
+                android:drawableLeft="@drawable/btn_radio_default"
+                app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+                app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+                android:drawablePadding="@dimen/padding_10" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_validation_textview_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_validation_textview_title"
+        android:layout_below="@id/rctn_validation_textview_contents"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:textColor="@color/colorTextWarning"
+        android:textSize="@dimen/font_12sp"
+        android:text="Please input email type"/>
+
+    <View style="@style/divider_horizontal_line"
+        android:id="@+id/v_validation_textview_underline"
+        android:layout_toEndOf="@id/rctn_validation_textview_checked"
+        android:layout_below="@id/tv_validation_textview_warning"/>
+</RelativeLayout>

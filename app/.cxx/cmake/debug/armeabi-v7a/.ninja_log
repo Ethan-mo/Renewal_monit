@@ -1,0 +1,8 @@
+# ninja log v5
+38	501	701252308	CMakeFiles/em-lib.dir/src/main/cpp/em-lib.cpp.o	bc4695e96eda0675
+56	641	701252308	CMakeFiles/em-lib.dir/src/main/cpp/aes/aes.cpp.o	ab77f02d05b37bce
+15	678	701252308	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	cfde754dfc5c89d3
+2	716	701252308	CMakeFiles/server-lib.dir/src/main/cpp/server-lib.cpp.o	c9fb11f577478199
+641	870	701252308	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libem-lib.so	569dd3b2f7255836
+716	887	701252308	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libserver-lib.so	9ef5deeb890ed288
+888	1083	701252308	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	2ab52ba29c53ad3e

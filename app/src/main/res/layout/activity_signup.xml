@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+        <View style="@style/shadow_horizontal_line" />
+        <include layout="@layout/order_indicator_bar" />
+
+        <FrameLayout
+            android:id="@+id/fragment_signup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="goodmonit.monit.com.kao.account.SignupContent1" />
+    </LinearLayout>
+    <include layout="@layout/widget_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

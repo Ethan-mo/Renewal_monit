@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lctn_notification_filter_section"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_filter_icon_section_height"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_notification_filter_diaper_changed"
+            android:layout_width="@dimen/notification_filter_icon_size"
+            android:layout_height="@dimen/notification_filter_icon_size"
+            android:background="@drawable/ic_notification_filter_diaper_changed_selector"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_notification_filter_pee_detected"
+            android:layout_width="@dimen/notification_filter_icon_size"
+            android:layout_height="@dimen/notification_filter_icon_size"
+            android:background="@drawable/ic_notification_filter_pee_detected_selector" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_notification_filter_poo_detected"
+            android:layout_width="@dimen/notification_filter_icon_size"
+            android:layout_height="@dimen/notification_filter_icon_size"
+            android:background="@drawable/ic_notification_filter_poo_detected_selector" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_notification_filter_abnormal_detected"
+            android:layout_width="@dimen/notification_filter_icon_size"
+            android:layout_height="@dimen/notification_filter_icon_size"
+            android:background="@drawable/ic_notification_filter_abnormal_detected_selector" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_notification_filter_fart_detected"
+            android:layout_width="@dimen/notification_filter_icon_size"
+            android:layout_height="@dimen/notification_filter_icon_size"
+            android:background="@drawable/ic_notification_filter_fart_detected_selector" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBackgroundWhiteLight">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notification_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_notification_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackgroundWhiteLight"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:text="@string/notification_empty_view" />
+
+        <Button
+            android:id="@+id/btn_notification_add_notification"
+            android:layout_width="@dimen/float_notification_add_button_size"
+            android:layout_height="@dimen/float_notification_add_button_size"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_40"
+            android:background="@drawable/ic_float_diaper_sensor_add"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</LinearLayout>

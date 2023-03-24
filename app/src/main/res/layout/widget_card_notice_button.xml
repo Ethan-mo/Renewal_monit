@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/lctn_widget_card_notice_button"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="@dimen/margin_10"
+	android:layout_marginStart="@dimen/margin_10"
+	android:layout_marginEnd="@dimen/margin_10"
+	android:orientation="horizontal"
+	android:background="@drawable/bg_btn_rect_white_solid_green_border">
+
+	<ImageView
+		android:id="@+id/iv_widget_card_notice_button_icon"
+		android:layout_width="@dimen/connection_row_direction_size"
+		android:layout_height="@dimen/connection_row_direction_size"
+		android:layout_gravity="center_vertical"
+		android:layout_marginStart="@dimen/margin_10"
+		android:layout_marginEnd="@dimen/margin_6"
+		android:background="@drawable/ic_setting_green" />
+
+	<goodmonit.monit.com.kao.widget.NotoTextView
+		android:id="@+id/tv_widget_card_notice_button_description"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:padding="@dimen/padding_5"
+		android:textColor="@color/colorPrimary"
+		android:text="@string/contents_need_sensor_firmware_update"
+		android:textSize="@dimen/font_12sp" />
+
+	<ImageView
+		android:id="@+id/iv_widget_card_notice_button_direction"
+		android:layout_width="@dimen/connection_row_direction_size"
+		android:layout_height="@dimen/connection_row_direction_size"
+		android:layout_gravity="center_vertical"
+		android:layout_marginStart="@dimen/margin_10"
+		android:layout_marginEnd="@dimen/margin_10"
+		android:background="@drawable/ic_direction_right_green" />
+
+</LinearLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:id="@+id/rctn_widget_setting_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/setting_device_row_height"
+        android:background="@drawable/bg_btn_white_darklight_selector">
+
+        <ImageView
+            android:id="@+id/iv_widget_setting_button_new_mark"
+            android:layout_width="@dimen/new_mark_without_character_small_size"
+            android:layout_height="@dimen/new_mark_without_character_small_size"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@drawable/ic_new_mark_no_char"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/lctn_widget_setting_button_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/setting_device_row_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_button_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_20"
+                android:textSize="@dimen/font_16sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/setting_device_name" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_button_title_depth2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_30"
+                android:textSize="@dimen/font_16sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/setting_device_name"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/iv_widget_setting_button_right_direction"
+                    android:layout_width="@dimen/setting_device_row_direction_size"
+                    android:layout_height="@dimen/setting_device_row_direction_size"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:background="@drawable/ic_direction_right_black_light"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_widget_setting_button_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:gravity="end"
+                    android:layout_toLeftOf="@id/iv_widget_setting_button_right_direction"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="@string/setting_device_name" />
+
+                <Switch
+                    android:id="@+id/switch_widget_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/setting_device_row_switch_track_height"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:track="@drawable/bg_setting_switch_track_selector"
+                    android:thumb="@drawable/bg_setting_switch_thumb_selector"
+                    android:checked="false"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_setting_button_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextWarning"
+            android:text="@string/setting_device_initialize"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_setting_button_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:maxLines="3"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextGrey"
+            android:text="@string/setting_device_initialize"
+            android:layout_below="@id/lctn_widget_setting_button_title"
+            android:visibility="gone"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_setting_button_description_depth2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_40"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:maxLines="3"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextGrey"
+            android:text="@string/setting_device_initialize"
+            android:layout_below="@id/lctn_widget_setting_button_title"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rctn_widget_setting_wheelview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_device_row_wheel_height"
+        android:layout_below="@id/rctn_widget_setting_button">
+
+        <View style="@style/divider_horizontal_line_light"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="120dp"/>
+
+        <goodmonit.monit.com.kao.widget.WheelView
+            xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/wv_widget_setting_button_item"
+            android:layout_width="wrap_content"
+            android:minWidth="@dimen/setting_device_row_wheel_width"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            wheelview:wvRowHeight="@dimen/setting_device_row_wheel_each_row_height"
+            wheelview:wvRowCount="5"
+            wheelview:wvSelectedTextColor="@color/colorTextPrimary"
+            wheelview:wvSelectedTextSize="@dimen/font_24sp"
+            wheelview:wvDefaultTextColor="@color/colorTextPrimaryLight"
+            wheelview:wvDefaultTextSize="@dimen/font_20sp" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_widget_setting_button_wheelview_item_extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/wv_widget_setting_button_item"
+            android:layout_marginStart="@dimen/margin_10"
+            android:textSize="@dimen/font_24sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="℃"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <View
+                android:id="@+id/v_widget_wheel_date_picker_divider_top"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <View
+                android:id="@+id/v_widget_wheel_date_picker_divider_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider"
+                android:layout_below="@id/v_widget_wheel_date_picker_divider_top"
+                android:layout_marginTop="@dimen/font_30sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_setting_button_other_category_divider"
+        android:layout_alignParentBottom="true" />
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_setting_button_same_category_divider"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_alignParentBottom="true" />
+
+
+
+</RelativeLayout>

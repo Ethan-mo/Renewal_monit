@@ -1,0 +1,81 @@
+{
+  "stringTable": {
+    "0": "C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dserver_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "3": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dem_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake",
+    "C:\\monit\\henderson\\monitxkao\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\monit\\henderson\\monitxkao\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\monit\\henderson\\monitxkao\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "em-lib-Debug-armeabi-v7a": {
+      "buildCommand": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\monit\\henderson\\monitxkao\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" em-lib",
+      "buildType": "debug",
+      "toolchain": "1699790152",
+      "abi": "armeabi-v7a",
+      "artifactName": "em-lib",
+      "files": [
+        {
+          "src": "C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\em-lib.cpp",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\aes\\aes.cpp",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "C:\\monit\\henderson\\monitxkao\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libem-lib.so"
+    },
+    "server-lib-Debug-armeabi-v7a": {
+      "buildCommand": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\monit\\henderson\\monitxkao\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" server-lib",
+      "buildType": "debug",
+      "toolchain": "1699790152",
+      "abi": "armeabi-v7a",
+      "artifactName": "server-lib",
+      "files": [
+        {
+          "src": "C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\server-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "C:\\monit\\henderson\\monitxkao\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libserver-lib.so"
+    },
+    "native-lib-Debug-armeabi-v7a": {
+      "buildCommand": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\monit\\henderson\\monitxkao\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" native-lib",
+      "buildType": "debug",
+      "toolchain": "1699790152",
+      "abi": "armeabi-v7a",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\native-lib.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "C:\\monit\\henderson\\monitxkao\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libnative-lib.so"
+    }
+  },
+  "toolchains": {
+    "1699790152": {
+      "cppCompilerExecutable": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

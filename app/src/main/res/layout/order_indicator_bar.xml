@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/indicator_section_height"
+    android:id="@+id/rctn_order_indicator_bar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_order_indicator1"
+            android:layout_width="@dimen/indicator_focused_size"
+            android:layout_height="@dimen/indicator_focused_size"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:gravity="center"
+            android:fontFamily="medium"
+            android:background="@drawable/bg_indicator_passed" />
+
+        <ImageView
+            android:id="@+id/iv_order_indicator_path1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorIndicatorLinePassed" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_order_indicator2"
+            android:layout_width="@dimen/indicator_not_focused_size"
+            android:layout_height="@dimen/indicator_not_focused_size"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:gravity="center"
+            android:fontFamily="medium"
+            android:text="2"
+            android:background="@drawable/bg_indicator_focused" />
+
+        <ImageView
+            android:id="@+id/iv_order_indicator_path2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorIndicatorLine" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_order_indicator3"
+            android:layout_width="@dimen/indicator_not_focused_size"
+            android:layout_height="@dimen/indicator_not_focused_size"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:gravity="center"
+            android:fontFamily="medium"
+            android:background="@drawable/bg_indicator_not_passed" />
+
+        <ImageView
+            android:id="@+id/iv_order_indicator_path3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorIndicatorLine" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_order_indicator4"
+            android:layout_width="@dimen/indicator_not_focused_size"
+            android:layout_height="@dimen/indicator_not_focused_size"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:gravity="center"
+            android:fontFamily="medium"
+            android:background="@drawable/bg_indicator_not_passed" />
+
+        <ImageView
+            android:id="@+id/iv_order_indicator_path4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorIndicatorLine" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_order_indicator5"
+            android:layout_width="@dimen/indicator_not_focused_size"
+            android:layout_height="@dimen/indicator_not_focused_size"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_16sp"
+            android:gravity="center"
+            android:fontFamily="medium"
+            android:background="@drawable/bg_indicator_not_passed" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

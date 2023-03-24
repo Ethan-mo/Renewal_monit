@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/dialog_contents_section_margin_top_bottom"
+    android:background="@drawable/bg_dialog_white_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title Section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginEnd="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginBottom="@dimen/dialog_contents_section_margin_top_bottom">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_dialog_notification_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dialog_title_section_margin_bottom"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextNegative"
+                android:text="알람메시지"
+                android:fontFamily="medium"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_dialog_notification_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_trash"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_dialog_notification_report_wrong_alarm"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_report_wrong_alarm_enabled"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/btn_dialog_notification_delete"
+                android:layout_marginEnd="@dimen/margin_10"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginEnd="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginBottom="@dimen/dialog_contents_section_margin_top_bottom"
+            android:orientation="vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_dialog_notification_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_gravity="center_horizontal"
+                android:text="2019년 1월 15일 오전 03:20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_dialog_notification_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_notification_diaper_pee" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_dialog_notification_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/device_sensor_diaper_status_pee_detail" />
+
+            </LinearLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_dialog_notification_wrong_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorButtonRemove"
+                android:text="잘못된 알람이에요."
+                android:drawableLeft="@drawable/ic_report_wrong_alarm_enabled"
+                android:layout_gravity="center"
+                app:compoundDrawableWidth="@dimen/margin_20"
+                app:compoundDrawableHeight="@dimen/margin_20"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginEnd="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginBottom="@dimen/dialog_contents_section_margin_top_bottom"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_dialog_notification_memo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dialog_title_section_margin_bottom"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextNegative"
+                android:text="Memo"
+                android:fontFamily="medium"/>
+
+            <goodmonit.monit.com.kao.widget.NotoEditText
+                android:id="@+id/et_dialog_notification_memo"
+                android:layout_width="@dimen/dialog_input_width"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:padding="@dimen/padding_5"
+                android:background="@drawable/bg_dialog_input_edittext"/>
+
+        </LinearLayout>
+
+        <View style="@style/divider_horizontal_line_with_margin"
+            android:background="@color/colorDividerForDialogButton" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_button_section_height"
+            android:orientation="horizontal">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                style="@style/dialog_text_negative_button"
+                android:id="@+id/btn_dialog_notification_negative"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_close"
+                android:textSize="@dimen/font_16sp"
+                android:fontFamily="medium"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

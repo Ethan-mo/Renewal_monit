@@ -1,0 +1,8 @@
+# ninja log v5
+13	389	701252306	CMakeFiles/em-lib.dir/src/main/cpp/em-lib.cpp.o	6f0d7cb3748faa68
+37	484	701252306	CMakeFiles/em-lib.dir/src/main/cpp/aes/aes.cpp.o	8730af7df5bbbc5c
+24	691	701252307	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	ca8ae3ff599b7500
+1	728	701252307	CMakeFiles/server-lib.dir/src/main/cpp/server-lib.cpp.o	b3c590b4e9f6e967
+484	750	701252307	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libem-lib.so	1d4f2b08cdd3c6c9
+728	870	701252307	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libserver-lib.so	8ad5220c0b823dba
+871	1108	701252307	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	194584fe2a3dd581

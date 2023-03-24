@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ctn_signin_edittext"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/signin_edittext_section_height"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_margin="@dimen/margin_6"
+    android:paddingStart="@dimen/padding_5"
+    android:background="@drawable/bg_underline_white">
+
+    <ImageView
+        android:id="@+id/iv_signin_edittext_icon"
+        android:layout_width="@dimen/signin_edittext_category_icon_size"
+        android:layout_height="@dimen/signin_edittext_category_icon_size"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:background="@drawable/ic_signin_user"/>
+
+    <goodmonit.monit.com.kao.widget.NotoEditText
+        android:id="@+id/et_signin_edittext_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="@dimen/font_14sp"
+        android:background="@android:color/transparent"
+        android:inputType="textEmailAddress"
+        android:hint="email" />
+
+    <ImageButton
+        android:id="@+id/ibtn_signin_edittext_show"
+        android:layout_width="@dimen/signin_edittext_show_icon_size"
+        android:layout_height="@dimen/signin_edittext_show_icon_size"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:background="@drawable/btn_edittext_show_password_white" />
+
+    <ImageButton
+        android:id="@+id/ibtn_signin_edittext_clear"
+        android:layout_width="@dimen/signin_edittext_clear_icon_size"
+        android:layout_height="@dimen/signin_edittext_clear_icon_size"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:background="@drawable/ic_edittext_clear"/>
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_notification_row_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_row_date_height"
+        android:gravity="bottom"
+        android:paddingStart="@dimen/padding_10"
+        android:paddingBottom="@dimen/padding_5"
+        android:background="@color/colorTransparent"
+        android:textSize="@dimen/font_12sp"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:text="2017.07.02"/>
+
+    <LinearLayout
+        android:id="@+id/lctn_notification_row_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_row_height"
+        android:background="@color/colorWhite"
+        android:paddingStart="@dimen/padding_10"
+        android:paddingEnd="@dimen/padding_20"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_notification_row_icon"
+            android:layout_width="@dimen/notification_row_icon_size"
+            android:layout_height="@dimen/notification_row_icon_size"
+            android:background="@drawable/ic_notification_diaper_pee"
+            android:layout_marginEnd="@dimen/margin_10" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_row_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/device_sensor_diaper_status_pee_detail"
+                android:layout_toEndOf="@id/iv_notification_row_icon" />
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_row_description_extra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:text="@string/device_sensor_diaper_status_pee_detail" />
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_notification_row_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:text="오전 03:20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_notification_row_new_mark"
+        android:layout_width="@dimen/new_mark_without_character_small_size"
+        android:layout_height="@dimen/new_mark_without_character_small_size"
+        android:background="@drawable/ic_new_mark_no_char"
+        android:layout_margin="@dimen/margin_10" />
+
+    <View
+        android:id="@+id/v_notification_row_continuous_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_marginStart="@dimen/notification_row_icon_right_margin"
+        android:layout_alignParentBottom="true" />
+
+    <View
+        android:id="@+id/v_notification_row_above_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_alignParentTop="true"/>
+
+    <View
+        android:id="@+id/v_notification_row_below_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerNotification"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

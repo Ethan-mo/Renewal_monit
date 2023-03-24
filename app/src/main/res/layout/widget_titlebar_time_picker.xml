@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lctn_titlebar_time_picker_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_titlebar_time_picker_title"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/signup_item_height"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/margin_20"
+            android:gravity="center_vertical"
+            android:text="@string/time_time"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_titlebar_time_picker_contents"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/signup_item_height"
+            android:layout_marginStart="@dimen/margin_10"
+            android:gravity="center_vertical"
+            android:text="2019.08.13"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextGrey" />
+        
+        <ImageView
+            android:id="@+id/iv_titlebar_time_picker_direction"
+            android:layout_width="@dimen/graph_date_direction_size"
+            android:layout_height="@dimen/graph_date_direction_size"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@drawable/ic_direction_down_black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lctn_titlebar_time_picker_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <View
+            android:id="@+id/v_titlebar_time_picker_empty_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="3" />
+        <View
+            android:id="@+id/v_titlebar_time_picker_divider"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_weight="2"
+            android:background="@color/colorDivider"/>
+    </LinearLayout>
+
+    <goodmonit.monit.com.kao.widget.Wheel12HourTimePicker
+        android:id="@+id/wdp_titlebar_time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_device_row_wheel_height"
+        android:background="@color/colorWhite"/>
+
+</LinearLayout>

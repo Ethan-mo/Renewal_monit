@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding_20"
+    android:paddingStart="@dimen/padding_20"
+    android:paddingEnd="@dimen/padding_20"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_monit_sensor_connected_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_16sp"
+        android:text="@string/connection_monit_sensor_connected_title"
+        android:fontFamily="medium" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_monit_sensor_connected_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_30"
+        android:layout_below="@id/tv_connection_monit_sensor_connected_title"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_monit_sensor_connected_detail" />
+
+    <goodmonit.monit.com.kao.widget.GuideViewPager
+        android:id="@+id/vp_connection_monit_sensor_connected_how_to_attach"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/connection_description_animation_size"
+        android:layout_below="@id/tv_connection_monit_sensor_connected_detail"
+        android:layout_centerHorizontal="true"/>
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_connection_monit_sensor_connected_connect_other_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30"
+        android:layout_below="@id/vp_connection_monit_sensor_connected_how_to_attach"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_connect_other_device"
+        android:background="@drawable/bg_underline_black"
+        android:minHeight="0dp"
+        android:visibility="gone"/>
+</RelativeLayout>

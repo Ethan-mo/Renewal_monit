@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundWhiteLight"
+            android:orientation="vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_group_detail_header_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_20"
+                android:text="@string/group_title_sharing_description"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:textSize="@dimen/font_12sp"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:layout_marginStart="@dimen/margin_20"
+                android:textAllCaps="true"
+                android:text="@string/group_leader"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"/>
+
+            <View style="@style/divider_horizontal_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_device_row_height"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:background="@color/colorWhite">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_leader_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="@dimen/font_16sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="MonitMom"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_group_detail_leader_short_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="ABCDEF"/>
+            </RelativeLayout>
+
+            <View style="@style/divider_horizontal_line" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_group_detail_share_device_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:layout_marginStart="@dimen/margin_20"
+                android:text="@string/group_title_device_count"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"/>
+
+            <View style="@style/divider_horizontal_line" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_group_detail_share_device_list_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:text="@string/group_share_device_list_empty"
+                android:gravity="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"/>
+
+            <View style="@style/divider_horizontal_line" />
+
+            <LinearLayout
+                android:id="@+id/lctn_group_detail_share_device_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Add Device List Here -->
+            </LinearLayout>
+            <View style="@style/divider_horizontal_line_light" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_group_detail_member_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:layout_marginStart="@dimen/margin_20"
+                android:text="@string/group_title_shared_member_count"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_device_detail_row_height"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/margin_6"
+                android:layout_marginEnd="@dimen/margin_6"
+                android:layout_marginBottom="@dimen/margin_10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:layout_marginEnd="@dimen/margin_10">
+
+                    <ImageView
+                        android:id="@+id/iv_group_detail_member1_icon"
+                        android:layout_width="@dimen/group_detail_row_icon_size"
+                        android:layout_height="@dimen/group_detail_row_icon_size"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_group_mom_deactivated"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/iv_group_detail_member1_icon">
+
+                        <LinearLayout
+                            android:id="@+id/lctn_group_detail_member1_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:visibility="gone">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member1_info_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_6"
+                                android:textSize="@dimen/font_16sp"
+                                android:textColor="@color/colorTextPrimary"
+                                android:text="Monit" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member1_info_short_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_14sp"
+                                android:textColor="@color/colorTextPrimaryLight"
+                                android:text="AABBCC" />
+
+                        </LinearLayout>
+
+                        <goodmonit.monit.com.kao.widget.NotoButton
+                            android:id="@+id/btn_group_detail_member1_add"
+                            android:layout_width="@dimen/group_detail_row_add_icon_size"
+                            android:layout_height="@dimen/group_detail_row_add_icon_size"
+                            android:background="@drawable/ic_add_group_member"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member1_divider_left"
+                        android:layout_alignParentStart="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member1_divider_top"
+                        android:layout_alignParentTop="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member1_divider_bottom"
+                        android:layout_alignParentBottom="true" />
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member1_divider_right"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/iv_group_detail_member2_icon"
+                        android:layout_width="@dimen/group_detail_row_icon_size"
+                        android:layout_height="@dimen/group_detail_row_icon_size"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_group_dad_deactivated"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/iv_group_detail_member2_icon">
+
+                        <LinearLayout
+                            android:id="@+id/lctn_group_detail_member2_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:visibility="gone">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member2_info_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_6"
+                                android:textSize="@dimen/font_16sp"
+                                android:textColor="@color/colorTextPrimary"
+                                android:text="Monit" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member2_info_short_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_14sp"
+                                android:textColor="@color/colorTextPrimaryLight"
+                                android:text="AABBCC" />
+
+                        </LinearLayout>
+
+                        <goodmonit.monit.com.kao.widget.NotoButton
+                            android:id="@+id/btn_group_detail_member2_add"
+                            android:layout_width="@dimen/group_detail_row_add_icon_size"
+                            android:layout_height="@dimen/group_detail_row_add_icon_size"
+                            android:background="@drawable/ic_add_group_member"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member2_divider_left"
+                        android:layout_alignParentStart="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member2_divider_top"
+                        android:layout_alignParentTop="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member2_divider_bottom"
+                        android:layout_alignParentBottom="true" />
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member2_divider_right"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_device_detail_row_height"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/margin_6"
+                android:layout_marginEnd="@dimen/margin_6"
+                android:layout_marginBottom="@dimen/margin_10">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:layout_marginEnd="@dimen/margin_10">
+
+                    <ImageView
+                        android:id="@+id/iv_group_detail_member3_icon"
+                        android:layout_width="@dimen/group_detail_row_icon_size"
+                        android:layout_height="@dimen/group_detail_row_icon_size"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_group_grandma_deactivated"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/iv_group_detail_member3_icon">
+
+                        <LinearLayout
+                            android:id="@+id/lctn_group_detail_member3_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:visibility="gone">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member3_info_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_6"
+                                android:textSize="@dimen/font_16sp"
+                                android:textColor="@color/colorTextPrimary"
+                                android:text="Monit" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member3_info_short_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_14sp"
+                                android:textColor="@color/colorTextPrimaryLight"
+                                android:text="AABBCC" />
+
+                        </LinearLayout>
+
+                        <goodmonit.monit.com.kao.widget.NotoButton
+                            android:id="@+id/btn_group_detail_member3_add"
+                            android:layout_width="@dimen/group_detail_row_add_icon_size"
+                            android:layout_height="@dimen/group_detail_row_add_icon_size"
+                            android:background="@drawable/ic_add_group_member"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member3_divider_left"
+                        android:layout_alignParentStart="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member3_divider_top"
+                        android:layout_alignParentTop="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member3_divider_bottom"
+                        android:layout_alignParentBottom="true" />
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member3_divider_right"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/iv_group_detail_member4_icon"
+                        android:layout_width="@dimen/group_detail_row_icon_size"
+                        android:layout_height="@dimen/group_detail_row_icon_size"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_group_grandpa_deactivated"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/iv_group_detail_member4_icon">
+
+                        <LinearLayout
+                            android:id="@+id/lctn_group_detail_member4_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:visibility="gone">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member4_info_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_6"
+                                android:textSize="@dimen/font_16sp"
+                                android:textColor="@color/colorTextPrimary"
+                                android:text="Monit" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_group_detail_member4_info_short_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_14sp"
+                                android:textColor="@color/colorTextPrimaryLight"
+                                android:text="AABBCC" />
+
+                        </LinearLayout>
+
+                        <goodmonit.monit.com.kao.widget.NotoButton
+                            android:id="@+id/btn_group_detail_member4_add"
+                            android:layout_width="@dimen/group_detail_row_add_icon_size"
+                            android:layout_height="@dimen/group_detail_row_add_icon_size"
+                            android:background="@drawable/ic_add_group_member"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member4_divider_left"
+                        android:layout_alignParentStart="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member4_divider_top"
+                        android:layout_alignParentTop="true" />
+
+                    <View style="@style/divider_horizontal_line"
+                        android:id="@+id/v_group_detail_member4_divider_bottom"
+                        android:layout_alignParentBottom="true" />
+
+                    <View style="@style/divider_vertical_line"
+                        android:id="@+id/v_group_detail_member4_divider_right"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_group_detail_footer_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_50"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:text="@string/group_share_member_description"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

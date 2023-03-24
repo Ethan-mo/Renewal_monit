@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/padding_3"
+    android:background="@drawable/bg_dialog_white_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextNegative"
+            android:text="Title"
+            android:fontFamily="medium"
+            android:layout_marginTop="@dimen/dialog_title_section_margin_bottom"
+            android:layout_marginBottom="@dimen/dialog_title_section_margin_bottom" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_dialog_contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/font_5_5sp"
+            android:text="Contents text size is 11sp.\nLine spacing is 20sp"
+            android:textColor="@color/colorTextNegative"
+            android:textSize="@dimen/font_12sp"
+            android:fontFamily="medium"
+            android:layout_marginBottom="@dimen/dialog_title_section_margin_bottom"/>
+
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:text="@string/dialog_sensor_sleep_start_date_time"
+            android:textSize="@dimen/font_12sp"
+            android:fontFamily="medium"
+            android:textColor="@color/colorTextPrimary"/>
+
+
+        <goodmonit.monit.com.kao.widget.TitlebarDatePicker
+            android:id="@+id/wdp_dialog_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View style="@style/divider_horizontal_line" />
+
+        <goodmonit.monit.com.kao.widget.TitlebarTimePicker
+            android:id="@+id/wtp_dialog_time_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View style="@style/divider_horizontal_line"
+            android:layout_marginBottom="@dimen/margin_10"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:text="@string/dialog_sensor_sleep_end_date_time"
+            android:textSize="@dimen/font_12sp"
+            android:fontFamily="medium"
+            android:textColor="@color/colorTextPrimary"/>
+
+        <goodmonit.monit.com.kao.widget.TitlebarDatePicker
+            android:id="@+id/wdp_dialog_date_picker2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View style="@style/divider_horizontal_line" />
+
+        <goodmonit.monit.com.kao.widget.TitlebarTimePicker
+            android:id="@+id/wtp_dialog_time_picker2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View style="@style/divider_horizontal_line_with_margin"
+            android:background="@color/colorDividerForDialogButton" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_button_section_height"
+            android:orientation="horizontal">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                style="@style/dialog_text_negative_button"
+                android:id="@+id/btn_dialog_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_cancel"
+                android:textSize="@dimen/font_16sp"
+                android:fontFamily="medium" />
+
+            <View style="@style/divider_vertical_line_with_margin"
+                android:background="@color/colorDividerForDialogButton"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                style="@style/dialog_text_positive_button"
+                android:id="@+id/btn_dialog_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btn_ok"
+                android:textSize="@dimen/font_16sp"
+                android:fontFamily="medium"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

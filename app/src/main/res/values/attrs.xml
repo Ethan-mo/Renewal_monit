@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SigninEditText">
+        <attr name="categoryIcon" format="reference" />
+        <attr name="clearIcon" format="reference" />
+        <attr name="showIcon" format="reference" />
+        <attr name="hint" format="reference|string" />
+        <attr name="hintColor" format="reference|color" />
+        <attr name="text" format="reference|string" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="textSize" format="reference|dimension" />
+        <attr name="password" format="reference|boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ValidationWidget">
+        <attr name="textTitle" format="reference|string" />
+        <attr name="textTitleWidth" format="reference|dimension" />
+        <attr name="textWarning" format="reference|string" />
+        <attr name="textHint" format="reference|string" />
+        <attr name="textItem1" format="reference|string" />
+        <attr name="textItem2" format="reference|string" />
+        <attr name="textContents" format="reference|string" />
+        <attr name="inputType" format="reference|string" />
+        <attr name="defaultSelected" format="string" />
+        <attr name="showUnderline" format="boolean" />
+        <attr name="showExtraInput" format="boolean" />
+        <attr name="showAgreement" format="boolean" />
+        <attr name="showWheelPicker" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WheelViewWidget">
+        <attr name="wvRowHeight" format="reference|dimension" />
+        <attr name="wvRowCount" format="reference|integer" />
+        <attr name="wvSelectedTextColor" format="reference|color" />
+        <attr name="wvSelectedTextSize" format="reference|dimension" />
+        <attr name="wvDefaultTextColor" format="reference|color" />
+        <attr name="wvDefaultTextSize" format="reference|dimension" />
+        <attr name="wvItem1" format="reference|string" />
+        <attr name="wvItem2" format="reference|string" />
+        <attr name="wvItem3" format="reference|string" />
+    </declare-styleable>
+
+    <declare-styleable name="Link">
+        <attr name="setUnderline" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CompoundDrawable">
+        <attr name="compoundDrawableWidth" format="dimension"/>
+        <attr name="compoundDrawableHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="SettingButton">
+        <attr name="buttonTitle" format="reference|string" />
+        <attr name="buttonIcon" format="reference|integer" />
+        <attr name="buttonUnderline" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="GraphView">
+        <attr name="graphGuideLineColor" format="color"/>
+        <attr name="graphGuideLineBoldThickness" format="dimension"/>
+        <attr name="graphGuideLineThickness" format="dimension"/>
+
+        <attr name="graphXAxisTextColor" format="color"/>
+        <attr name="graphXAxisTextSize" format="dimension"/>
+
+        <attr name="graphYAxisTextColor" format="color"/>
+        <attr name="graphYAxisTextSize" format="dimension"/>
+
+        <attr name="graphInboxTextColor" format="color"/>
+        <attr name="graphInboxTextSize" format="dimension"/>
+
+        <attr name="graphPointColor" format="color"/>
+        <attr name="graphPointSize" format="dimension"/>
+
+        <attr name="graphLineColor" format="color"/>
+        <attr name="graphLineThickness" format="dimension"/>
+
+        <attr name="graphMarginTop" format="dimension"/>
+        <attr name="graphMarginBottom" format="dimension"/>
+        <attr name="graphMarginStart" format="dimension"/>
+        <attr name="graphMarginEnd" format="dimension"/>
+
+        <attr name="graphBarWidth" format="dimension"/>
+        <attr name="graphBarColor" format="color"/>
+        <attr name="graphBarSelectedColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="TooltipBox">
+        <attr name="tooltipBoxTitle" format="string" />
+        <attr name="tooltipBoxContents" format="string" />
+        <attr name="tooltipBoxBackground" format="reference" />
+    </declare-styleable>
+
+</resources>

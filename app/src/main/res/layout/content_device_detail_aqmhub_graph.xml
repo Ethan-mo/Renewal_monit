@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graph_date_section_height">
+
+        <LinearLayout
+            android:id="@+id/lctn_graph_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_graph_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/hub_graph_today"/>
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_graph_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:text="Jul 13th, Thu"/>
+
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/lctn_graph_date"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:drawableLeft="@drawable/ic_direction_left_black"
+            android:background="@color/colorTransparent"
+            app:compoundDrawableWidth="@dimen/graph_date_direction_size"
+            app:compoundDrawableHeight="@dimen/graph_date_direction_size" />
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/lctn_graph_date"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:drawableRight="@drawable/ic_direction_right_black"
+            android:background="@color/colorTransparent"
+            app:compoundDrawableWidth="@dimen/graph_date_direction_size"
+            app:compoundDrawableHeight="@dimen/graph_date_direction_size" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graph_value_section_height"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_graph_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="AM 12:25" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_graph_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_20sp"
+                    android:textColor="@color/colorTextEnvironmentCategory"
+                    android:fontFamily="light"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_graph_time_value_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="℃"
+                    android:fontFamily="light"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_graph_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/hub_graph_average" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_graph_average_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_20sp"
+                    android:textColor="@color/colorTextEnvironmentCategory"
+                    android:fontFamily="light"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_graph_average_value_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="℃"
+                    android:fontFamily="light"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rctn_graph"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <goodmonit.monit.com.kao.widget.EnvironmentGraphView
+            android:id="@+id/gv_environment_graph"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_environment_graph_max_value"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/font_30sp"
+            android:textSize="@dimen/font_12sp"
+            android:text="34.2"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@drawable/bg_graph_max_value_blue"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="@dimen/padding_3"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_environment_graph_min_value"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/font_30sp"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="12.34"
+            android:background="@drawable/bg_graph_min_value_blue"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="@dimen/padding_3"/>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_environment_graph_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingBottom="@dimen/padding_10"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:text="@string/hub_graph_no_data"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_btn_radius_white_solid_grey_border"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/graph_tab_section_height"
+        android:orientation="horizontal">
+        <!--
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_tab_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_tab_score"
+            android:textColor="@color/colorTextEnvironmentCategory"
+            android:textSize="@dimen/font_12sp"
+            android:text="@string/hub_graph_score"
+            android:background="@color/colorTransparent"
+            android:padding="@dimen/padding_10"
+            app:compoundDrawableWidth="@dimen/graph_tab_icon_size"
+            app:compoundDrawableHeight="@dimen/graph_tab_icon_size"/>
+        -->
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_tab_temperature"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_tab_temperature"
+            android:textColor="@color/colorTextEnvironmentCategory"
+            android:textSize="@dimen/font_12sp"
+            android:text="@string/hub_graph_temperature"
+            android:background="@color/colorTransparent"
+            android:padding="@dimen/padding_10"
+            app:compoundDrawableWidth="@dimen/graph_tab_icon_size"
+            app:compoundDrawableHeight="@dimen/graph_tab_icon_size"/>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_tab_humidity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_tab_humidity"
+            android:textColor="@color/colorTextEnvironmentCategory"
+            android:textSize="@dimen/font_12sp"
+            android:text="@string/hub_graph_humidity"
+            android:background="@color/colorTransparent"
+            android:padding="@dimen/padding_10"
+            app:compoundDrawableWidth="@dimen/graph_tab_icon_size"
+            app:compoundDrawableHeight="@dimen/graph_tab_icon_size"/>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_graph_tab_voc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_tab_voc"
+            android:textColor="@color/colorTextEnvironmentCategory"
+            android:textSize="@dimen/font_12sp"
+            android:text="@string/hub_graph_voc"
+            android:background="@color/colorTransparent"
+            android:padding="@dimen/padding_10"
+            app:compoundDrawableWidth="@dimen/graph_tab_icon_size"
+            app:compoundDrawableHeight="@dimen/graph_tab_icon_size"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:validation="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/signup_parent_icon_size"
+                    android:layout_height="@dimen/signup_parent_icon_size"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:background="@drawable/ic_family_dad" />
+                <ImageView
+                    android:layout_width="@dimen/signup_parent_icon_size"
+                    android:layout_height="@dimen/signup_parent_icon_size"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:background="@drawable/ic_family_mom" />
+
+            </LinearLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_20"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_16sp"
+                android:text="@string/signup_step3_title"
+                android:fontFamily="medium" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/signup_step3_detail" />
+
+            <goodmonit.monit.com.kao.widget.ValidationEditText
+                android:id="@+id/vet_activity_signup_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/account_nickname"
+                validation:textWarning="@string/account_warning_nickname"
+                validation:textHint="@string/setting_account_name_hint"/>
+
+            <goodmonit.monit.com.kao.widget.ValidationBirthdayYYMMDD
+                android:id="@+id/vtv_activity_signup_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/account_birthday"
+                validation:textWarning="@string/account_warning_birthday"
+                validation:textContents="@string/account_warning_birthday" />
+
+            <goodmonit.monit.com.kao.widget.ValidationRadio
+                android:id="@+id/vr_activity_signup_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/account_gender"
+                validation:textWarning="@string/account_warning_gender"
+                validation:textItem1="@string/gender_male"
+                validation:textItem2="@string/gender_female"
+                validation:showUnderline="false"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorDividerPrimaryLight" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

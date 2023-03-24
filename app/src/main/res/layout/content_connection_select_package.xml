@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight"
+    android:orientation="vertical">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_14sp"
+        android:textColor="@color/colorTextPrimary"
+        android:text="@string/connection_select_device"
+        android:gravity="bottom|left"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:src="@drawable/img_monit_package"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:textSize="@dimen/font_12sp"
+        android:textColor="@color/colorTextGrey"
+        android:text="@string/connection_package_components" />
+
+    <View style="@style/divider_horizontal_line"/>
+
+    <RelativeLayout
+        android:id="@+id/rctn_connection_select_device_monit_package"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/connection_row_device_button_height"
+        android:background="@drawable/bg_btn_white_darklight_selector"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_connection_select_device_monit_package"
+            android:layout_width="@dimen/connection_row_device_icon_size"
+            android:layout_height="@dimen/connection_row_device_icon_size"
+            android:src="@drawable/ic_device_monit_package"
+            android:layout_centerVertical="true" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_connection_select_device_monit_package"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_16sp"
+            android:textColor="@color/colorTextPrimary"
+            android:text="@string/device_monit_package"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_connection_select_device_monit_package" />
+
+        <ImageView
+            android:id="@+id/iv_connection_select_device_monit_package_more"
+            android:layout_width="@dimen/connection_row_direction_size"
+            android:layout_height="@dimen/connection_row_direction_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_direction_right_black_light" />
+
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal_line" />
+</LinearLayout>

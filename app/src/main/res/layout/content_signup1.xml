@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:validation="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_activity_signup_account_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_20"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_16sp"
+                android:text="@string/signup_step1_title"
+                android:fontFamily="medium" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_activity_signup_account_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/signup_step1_detail" />
+
+            <goodmonit.monit.com.kao.widget.ValidationEditText
+                android:id="@+id/vet_activity_signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/account_email"
+                validation:textWarning="@string/account_warning_email"
+                validation:textHint="@string/account_hint_email"/>
+
+            <goodmonit.monit.com.kao.widget.ValidationEditText
+                android:id="@+id/vet_activity_signup_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/account_password"
+                validation:textWarning="@string/account_warning_password"
+                validation:textHint="@string/account_hint_password"
+                validation:inputType="password"
+                validation:showUnderline="true" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/account_password_description" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/signup_divider_height"
+                android:background="@color/colorDividerPrimaryLight"/>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_20"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_16sp"
+                android:text="@string/agreement_title"
+                android:fontFamily="medium" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_activity_signup_agreement_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_20"
+                android:paddingEnd="@dimen/padding_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_14sp"
+                android:text="@string/agreement_description_gdpr" />
+
+            <goodmonit.monit.com.kao.widget.ValidationRadio
+                android:id="@+id/vr_activity_signup_eu_citizen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/agreement_eu_citizen"
+                validation:textWarning="@string/account_warning_code"
+                validation:textItem1="@string/btn_yes"
+                validation:textItem2="@string/btn_no"
+                validation:textTitleWidth="300dp"
+                validation:showUnderline="true"/>
+
+            <goodmonit.monit.com.kao.widget.ValidationAgreementPolicy
+                android:id="@+id/vap_activity_signup_terms_of_use"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_40" />
+
+            <goodmonit.monit.com.kao.widget.ValidationAgreementPolicy
+                android:id="@+id/vap_activity_signup_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_40" />
+
+            <goodmonit.monit.com.kao.widget.ValidationAgreementPolicy
+                android:id="@+id/vap_activity_signup_3rd_party_data_provide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_40"
+                android:visibility="gone"/>
+
+            <goodmonit.monit.com.kao.widget.ValidationAgreement
+                android:id="@+id/vtv_activity_signup_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                validation:textTitle="@string/legal_agreement"
+                validation:textWarning="@string/account_warning_agreement"
+                validation:textContents="agreement"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorDividerPrimaryLight"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

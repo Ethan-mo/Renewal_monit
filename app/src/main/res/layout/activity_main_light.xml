@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_main_light" />
+        <View style="@style/shadow_horizontal_line" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/srl_main_light_current_status">
+
+            <ScrollView
+                android:id="@+id/sv_main_light_current_status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/lctn_main_light_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_6"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_25"
+                            android:layout_marginStart="@dimen/margin_30"
+                            android:src="@drawable/ic_curved_direction_left_top"/>
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:id="@+id/tv_empty_in_main_light_empty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_15"
+                            android:layout_marginStart="@dimen/margin_6"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/font_14sp"
+                            android:text="@string/device_no_registered_devices" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lctn_main_light_current_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                </RelativeLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/rctn_notification_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackgroundWhiteLight"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_notification_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_10" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_notification_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@color/colorBackgroundWhiteLight"
+                android:gravity="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_16sp"
+                android:text="@string/notification_empty_view" />
+
+            <Button
+                android:id="@+id/btn_notification_add_notification"
+                android:layout_width="@dimen/float_notification_add_button_size"
+                android:layout_height="@dimen/float_notification_add_button_size"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_40"
+                android:background="@drawable/ic_float_diaper_sensor_add"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true" />
+
+            <View style="@style/shadow_horizontal_line"
+                android:layout_alignParentTop="true"
+                android:layout_height="@dimen/margin_10"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_notification_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="@string/notification_check_detail_information"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"
+                android:fontFamily="medium"
+                android:background="@color/colorTransparent" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_main_light_group"
+        android:layout_width="@dimen/float_group_button_size"
+        android:layout_height="@dimen/float_group_button_size"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_40"
+        android:background="@drawable/btn_group_selector"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+    
+    <include layout="@layout/widget_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/group_member_section_height"
+    android:background="@color/colorWhite">
+
+    <ViewSwitcher
+        android:id="@+id/vs_widget_group_member"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rctn_widget_group_member_show_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_widget_group_member_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:textSize="@dimen/font_16sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="Mom" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_widget_group_member_shortid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextPrimaryLight"
+                    android:text="#ABC123" />
+
+            </LinearLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoTextView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/tv_widget_group_member_leader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPositive"
+                android:text="@string/group_leader"
+                android:gravity="bottom|center_horizontal"
+                android:drawableTop="@drawable/ic_group_leader"
+                android:padding="@dimen/padding_5"
+                app:compoundDrawableWidth="@dimen/group_member_leader_icon_size"
+                app:compoundDrawableHeight="@dimen/group_member_leader_icon_size" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rctn_widget_group_member_delete_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_widget_group_member_delete"
+                android:layout_width="@dimen/group_member_section_height"
+                android:layout_height="@dimen/group_member_section_height"
+                android:textSize="@dimen/font_14sp"
+                android:background="@drawable/bg_btn_remove_selector"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="medium"
+                android:text="@string/btn_remove"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+    </ViewSwitcher>
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_group_member_divider_same_category"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_group_member_divider_other_category"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

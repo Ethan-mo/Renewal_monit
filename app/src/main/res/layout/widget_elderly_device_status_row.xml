@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/colorBackgroundWhiteLight">
+
+	<RelativeLayout
+		android:id="@+id/rctn_device_status_titlebar"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/device_status_section_title_height">
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_device_status_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_20"
+			android:layout_marginBottom="@dimen/margin_6"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentBottom="true"
+			android:textSize="@dimen/font_14sp"
+			android:textColor="@color/colorTextPrimary"
+			android:text="@string/device_lamp"/>
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_device_status_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginEnd="@dimen/margin_20"
+			android:layout_marginBottom="@dimen/margin_6"
+			android:gravity="end"
+			android:textSize="@dimen/font_14sp"
+			android:textColor="@color/colorTextPrimaryLight"/>
+
+		<View style="@style/shadow_horizontal_line"
+			android:layout_alignParentBottom="true"/> <!-- Divider -->
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/rctn_device_status_dashboard"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/device_status_section_height"
+		android:layout_below="@id/rctn_device_status_titlebar"
+		android:background="@color/colorWhite"
+		android:paddingStart="@dimen/padding_20">
+
+		<ImageView
+			android:id="@+id/iv_device_status_device_icon_background"
+			android:layout_width="@dimen/device_status_device_icon_size"
+			android:layout_height="@dimen/device_status_device_icon_size"
+			android:layout_centerVertical="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginEnd="@dimen/margin_10"
+			android:gravity="center" />
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_device_status_device_icon"
+			android:layout_width="@dimen/device_status_device_icon_size"
+			android:layout_height="@dimen/device_status_device_icon_size"
+			android:layout_centerVertical="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginEnd="@dimen/margin_10"
+			android:gravity="center"
+			android:background="@drawable/ic_device_sensor_connected"
+			android:textSize="@dimen/font_24sp" />
+
+		<ImageView
+			android:id="@+id/iv_device_status_connection_type"
+			android:layout_width="@dimen/device_status_device_connection_icon_size"
+			android:layout_height="@dimen/device_status_device_connection_icon_size"
+			android:layout_alignRight="@id/tv_device_status_device_icon"
+			android:layout_alignTop="@id/tv_device_status_device_icon"
+			android:visibility="gone"/>
+
+		<LinearLayout
+			android:id="@+id/lctn_device_status_battery_power"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignRight="@id/tv_device_status_device_icon"
+			android:layout_alignBottom="@id/tv_device_status_device_icon"
+			android:orientation="vertical"
+			android:gravity="end"
+			android:visibility="gone">
+
+			<ImageView
+				android:id="@+id/iv_device_status_battery_power"
+				android:layout_width="@dimen/margin_10"
+				android:layout_height="@dimen/margin_10"
+				android:background="@drawable/ic_sensor_diaper_battery_7x_row"/>
+
+			<TextView
+				android:id="@+id/tv_device_status_battery_power"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/colorTextPrimary"
+				android:textSize="@dimen/font_8sp"
+				android:text="90"/>
+		</LinearLayout>
+
+		<ImageView
+			android:id="@+id/iv_device_status_new_mark"
+			android:layout_width="@dimen/new_mark_with_character_size"
+			android:layout_height="@dimen/new_mark_with_character_size"
+			android:layout_alignStart="@id/tv_device_status_device_icon"
+			android:layout_alignTop="@id/tv_device_status_device_icon"
+			android:background="@drawable/ic_new_mark"
+			android:visibility="gone"/>
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_device_status_description"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_toEndOf="@id/tv_device_status_device_icon"
+			android:paddingStart="@dimen/padding_10"
+			android:paddingEnd="@dimen/padding_30"
+			android:gravity="center_vertical"
+			android:textColor="@color/colorTextNotSelected"
+			android:text="@string/device_sensor_disconnected"
+			android:textSize="@dimen/font_12sp" />
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_alignParentEnd="true"
+			android:orientation="vertical">
+
+			<ImageView
+				android:id="@+id/iv_device_status_battery_charging_power"
+				android:layout_width="@dimen/margin_30"
+				android:layout_height="@dimen/margin_30"
+				android:background="@drawable/ic_sensor_diaper_battery_7x_row"
+				android:visibility="gone"/>
+
+			<TextView
+				android:id="@+id/tv_device_status_battery_charging_power"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="20dp"
+				android:textColor="@color/colorTextPrimary"
+				android:fontFamily="medium"
+				android:textSize="@dimen/font_14sp"
+				android:text="24%"
+				android:visibility="gone"/>
+
+		</LinearLayout>
+
+		<goodmonit.monit.com.kao.widget.NotoButton
+			android:id="@+id/btn_device_status_reconnect"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/padding_10"
+			android:layout_marginEnd="@dimen/margin_10"
+			android:minWidth="0dp"
+			android:text="@string/btn_connect"
+			android:textSize="@dimen/font_14sp"
+			android:textColor="@color/colorTextPrimary"
+			android:background="@color/colorTransparent"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentBottom="true"
+			android:fontFamily="medium"
+			android:visibility="gone"/>
+
+		<LinearLayout
+			android:id="@+id/lctn_device_status_dashboard"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_toEndOf="@id/tv_device_status_device_icon"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:id="@+id/lctn_device_status_item1"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:orientation="vertical"
+				android:gravity="center">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon1"
+						android:layout_width="@dimen/device_status_item_icon_size"
+						android:layout_height="@dimen/device_status_item_icon_size"
+						android:background="@drawable/ic_sensor_operation_activated"
+						android:layout_centerInParent="true"/>
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon1_new"
+						android:layout_width="@dimen/new_mark_without_character_big_size"
+						android:layout_height="@dimen/new_mark_without_character_big_size"
+						android:background="@drawable/ic_new_mark_no_char"
+						android:layout_alignTop="@id/iv_device_status_icon1"
+						android:layout_alignRight="@id/iv_device_status_icon1"
+						android:visibility="gone"/>
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:orientation="horizontal"
+						android:gravity="bottom">
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text1"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="25.4"
+							android:textColor="@color/colorTextDiaperCategory"
+							android:textSize="@dimen/font_24sp"
+							android:visibility="gone"/>
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text1_unit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/unit_temperature_celsius"
+							android:textColor="@color/colorTextPrimaryLight"
+							android:textSize="@dimen/font_12sp"
+							android:visibility="gone"/>
+					</LinearLayout>
+				</RelativeLayout>
+
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_content1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ON"
+					android:textColor="@color/colorTextPrimaryLight"
+					android:textSize="@dimen/font_12sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/lctn_device_status_item2"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:orientation="vertical"
+				android:gravity="center">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon2"
+						android:layout_width="@dimen/device_status_item_icon_size"
+						android:layout_height="@dimen/device_status_item_icon_size"
+						android:background="@drawable/ic_sensor_operation_activated"
+						android:layout_centerInParent="true"/>
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon2_new"
+						android:layout_width="@dimen/new_mark_without_character_big_size"
+						android:layout_height="@dimen/new_mark_without_character_big_size"
+						android:background="@drawable/ic_new_mark_no_char"
+						android:layout_alignTop="@id/iv_device_status_icon2"
+						android:layout_alignRight="@id/iv_device_status_icon2"
+						android:visibility="gone"/>
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:orientation="horizontal"
+						android:gravity="bottom">
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text2"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/device_sensor_operation"
+							android:textColor="@color/colorTextDiaperCategory"
+							android:textSize="@dimen/font_24sp"
+							android:visibility="gone"/>
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text2_unit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/device_sensor_operation"
+							android:textColor="@color/colorTextPrimaryLight"
+							android:textSize="@dimen/font_12sp"
+							android:visibility="gone"/>
+					</LinearLayout>
+
+				</RelativeLayout>
+
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_content2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ON"
+					android:textColor="@color/colorTextPrimaryLight"
+					android:textSize="@dimen/font_12sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/lctn_device_status_item3"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:orientation="vertical"
+				android:gravity="center">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon3"
+						android:layout_width="@dimen/device_status_item_icon_size"
+						android:layout_height="@dimen/device_status_item_icon_size"
+						android:background="@drawable/ic_sensor_operation_activated"
+						android:layout_centerInParent="true"/>
+
+					<ImageView
+						android:id="@+id/iv_device_status_icon3_new"
+						android:layout_width="@dimen/new_mark_without_character_big_size"
+						android:layout_height="@dimen/new_mark_without_character_big_size"
+						android:background="@drawable/ic_new_mark_no_char"
+						android:layout_alignTop="@id/iv_device_status_icon3"
+						android:layout_alignRight="@id/iv_device_status_icon3"
+						android:visibility="gone"/>
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:orientation="horizontal"
+						android:gravity="bottom">
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/device_sensor_operation"
+							android:textColor="@color/colorTextDiaperCategory"
+							android:textSize="@dimen/font_24sp"
+							android:visibility="gone"/>
+
+						<goodmonit.monit.com.kao.widget.NotoTextView
+							android:id="@+id/tv_device_status_text3_unit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/device_sensor_operation"
+							android:textColor="@color/colorTextPrimaryLight"
+							android:textSize="@dimen/font_12sp"
+							android:visibility="gone"/>
+					</LinearLayout>
+				</RelativeLayout>
+
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_content3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ON"
+					android:textColor="@color/colorTextPrimaryLight"
+					android:textSize="@dimen/font_12sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/lctn_device_status_multitouch_dashboard"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_toEndOf="@id/tv_device_status_device_icon"
+			android:layout_marginEnd="@dimen/margin_20"
+			android:orientation="vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_device_status_multitouch_etc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="Sensor Information"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="15dp"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:id="@+id/iv_device_status_ch_prev"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+
+				<ImageView
+					android:id="@+id/iv_device_status_ch1"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+
+				<ImageView
+					android:id="@+id/iv_device_status_ch2"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch3"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch4"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch5"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch6"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch7"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch8"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="2"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+				<ImageView
+					android:id="@+id/iv_device_status_ch9"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:background="@drawable/elderly_gradient_lv1lv1"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:layout_marginBottom="@dimen/margin_10"
+				android:orientation="horizontal"
+				android:gravity="center">
+
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch1"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch2"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch3"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch4"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch5"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch6"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch7"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch8"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+				<goodmonit.monit.com.kao.widget.NotoTextView
+					android:id="@+id/tv_device_status_ch9"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:textSize="@dimen/font_12sp"
+					android:textColor="@color/colorTextPrimaryDark"
+					android:gravity="center_horizontal"
+					android:text="100"/>
+			</LinearLayout>
+		</LinearLayout>
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:id="@+id/rctn_device_status_feedback"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/margin_50"
+		android:layout_below="@id/rctn_device_status_dashboard"
+		android:layout_marginStart="@dimen/margin_20"
+		android:layout_marginEnd="@dimen/margin_20"
+		android:background="@color/colorWhite"
+		android:orientation="horizontal">
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/margin_10"
+			android:text="기저귀확인"
+			android:textSize="@dimen/font_18sp"/>
+
+		<goodmonit.monit.com.kao.widget.NotoButton
+			android:id="@+id/btn_device_status_btn1"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+            		android:textSize="@dimen/font_18sp"
+			android:fontFamily="medium"
+            		android:gravity="center"
+            		android:padding="0dp"
+			android:text="깨끗"/>
+
+		<goodmonit.monit.com.kao.widget.NotoButton
+			android:id="@+id/btn_device_status_btn4"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+            		android:textSize="@dimen/font_18sp"
+			android:fontFamily="medium"
+            		android:gravity="center"
+            		android:padding="0dp"
+			android:text="소변"/>
+
+		<goodmonit.monit.com.kao.widget.NotoButton
+			android:id="@+id/btn_device_status_btn5"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+            		android:textSize="@dimen/font_18sp"
+			android:fontFamily="medium"
+            		android:gravity="center"
+           		android:padding="0dp"
+			android:text="대변"/>
+
+		<goodmonit.monit.com.kao.widget.NotoButton
+			android:id="@+id/btn_device_status_btn6"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:textSize="@dimen/font_18sp"
+			android:fontFamily="medium"
+			android:gravity="center"
+			android:padding="0dp"
+			android:text="초기화"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/rctn_device_status_feedback"
+		android:orientation="vertical">
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_elderly_notification_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/margin_20"
+			android:textSize="@dimen/font_18sp"
+			android:textColor="@color/colorTextWarning"
+			android:fontFamily="medium"
+			android:text="아래 메시지를 눌러 맞음/틀림 알람 피드백을 입력해주세요."/>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rv_elderly_notification_list"
+			android:layout_width="match_parent"
+			android:layout_height="160dp"
+			android:layout_marginTop="@dimen/margin_10"/>
+
+	</LinearLayout>
+
+	<View style="@style/shadow_horizontal_line"
+		android:id="@+id/v_device_status_underline_other_category"
+		android:layout_alignParentBottom="true"/> <!-- Divider -->
+	<View style="@style/shadow_horizontal_line"
+		android:id="@+id/v_device_status_underline_same_category"
+		android:layout_marginStart="@dimen/margin_20"
+		android:layout_alignParentBottom="true"/> <!-- Divider -->
+</RelativeLayout>
+
+

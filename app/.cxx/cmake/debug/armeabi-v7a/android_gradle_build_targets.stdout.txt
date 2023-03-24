@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\monit\henderson\monitxkao\app\.cxx\cmake\debug\armeabi-v7a'
+ninja: no work to do.

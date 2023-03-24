@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundWhiteLight"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+        <View style="@style/shadow_horizontal_line" />
+
+        <ScrollView
+            android:id="@+id/sv_nugu_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackgroundWhiteLight">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_25"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_50"
+                    android:layout_marginBottom="@dimen/margin_40"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/logo_monit_char"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:layout_marginRight="@dimen/margin_20"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_by_grey"
+                        android:layout_marginRight="@dimen/margin_20"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/logo_nugu_char"/>
+                </LinearLayout>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_70"
+                    android:paddingTop="@dimen/padding_10"
+                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_30"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:background="@drawable/bg_speech_balloon_nugu"
+                    android:text="@string/nugu_speech_bubble"
+                    android:gravity="center"
+                    android:textSize="@dimen/font_16sp"
+                    android:fontFamily="medium"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:text="@string/nugu_summary"
+                    android:gravity="center"
+                    android:textColor="#0d61a4"
+                    android:textSize="@dimen/font_16sp"
+                    android:lineSpacingMultiplier="0.6"
+                    android:fontFamily="medium"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="267dp"
+                    android:src="@drawable/ic_device_nugu"
+                    android:layout_gravity="center_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_50"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/padding_20"
+                    android:paddingEnd="@dimen/padding_20">
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_15"
+                        android:fontFamily="medium"
+                        android:text="@string/nugu_guide_title"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="@dimen/font_14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="@dimen/margin_20"
+                            android:layout_height="@dimen/margin_20"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:background="@drawable/bg_btn_oval_black_solid_no_border"
+                            android:fontFamily="light"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_12sp" />
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_10"
+                            android:fontFamily="light"
+                            android:text="@string/nugu_guide_contents_1"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/font_14sp" />
+                    </LinearLayout>
+
+                    <goodmonit.monit.com.kao.widget.NotoButton
+                        android:id="@+id/btn_nugu_launch_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_50"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:background="@drawable/bg_btn_green_darkgreen_selector"
+                        android:fontFamily="medium"
+                        android:gravity="center"
+                        android:text="@string/nugu_guide_btn_app_open"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:orientation="horizontal">
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="@dimen/margin_20"
+                            android:layout_height="@dimen/margin_20"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:background="@drawable/bg_btn_oval_black_solid_no_border"
+                            android:fontFamily="light"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_12sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/font_18sp"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:src="@drawable/btn_nugu_menu"
+                            android:adjustViewBounds="true" />
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="light"
+                            android:text="@string/nugu_guide_contents_2"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/font_14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:orientation="horizontal">
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="@dimen/margin_20"
+                            android:layout_height="@dimen/margin_20"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:background="@drawable/bg_btn_oval_black_solid_no_border"
+                            android:fontFamily="light"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_12sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/font_18sp"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:src="@drawable/btn_nugu_link"
+                            android:adjustViewBounds="true"/>
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:layout_weight="1"
+                            android:fontFamily="light"
+                            android:text="@string/nugu_guide_contents_3"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/font_14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:orientation="horizontal">
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="@dimen/margin_20"
+                            android:layout_height="@dimen/margin_20"
+                            android:layout_marginEnd="@dimen/margin_6"
+                            android:background="@drawable/bg_btn_oval_black_solid_no_border"
+                            android:fontFamily="light"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/font_12sp" />
+
+                        <goodmonit.monit.com.kao.widget.NotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="light"
+                            android:text="@string/nugu_guide_contents_4"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="@dimen/font_14sp" />
+                    </LinearLayout>
+
+                    <goodmonit.monit.com.kao.widget.NotoButton
+                        android:id="@+id/btn_nugu_get_authentication_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_50"
+                        android:background="@drawable/bg_btn_green_darkgreen_selector"
+                        android:fontFamily="medium"
+                        android:gravity="center"
+                        android:text="@string/nugu_auth_btn_issue"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lctn_nugu_get_authentication_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_btn_rect_white_solid_green_border"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_50"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_20"
+                                android:layout_weight="1"
+                                android:fontFamily="medium"
+                                android:text="@string/nugu_auth_memberid_title"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="@dimen/font_14sp" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_nugu_membership_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_10"
+                                android:fontFamily="light"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="@dimen/font_16sp" />
+
+                            <goodmonit.monit.com.kao.widget.NotoButton
+                                android:id="@+id/btn_nugu_copy_membership_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_10"
+                                android:background="@drawable/bg_btn_radius_white_solid_grey_border"
+                                android:fontFamily="light"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:paddingTop="@dimen/padding_3"
+                                android:paddingBottom="@dimen/padding_3"
+                                android:paddingStart="@dimen/padding_10"
+                                android:paddingEnd="@dimen/padding_10"
+                                android:text="@string/nugu_auth_btn_copy"
+                                android:textColor="@color/colorTextGrey"
+                                android:textSize="@dimen/font_12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin_50"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_20"
+                                android:layout_marginEnd="@dimen/margin_6"
+                                android:fontFamily="medium"
+                                android:text="@string/nugu_auth_key_title"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="@dimen/font_14sp" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_nugu_authentication_key_valid_time"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="light"
+                                android:gravity="start"
+                                android:text=""
+                                android:textColor="@color/colorTextGrey"
+                                android:textSize="@dimen/font_12sp" />
+
+                            <goodmonit.monit.com.kao.widget.NotoTextView
+                                android:id="@+id/tv_nugu_authentication_key"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_10"
+                                android:fontFamily="light"
+                                android:textColor="@color/colorTextPrimary"
+                                android:textSize="@dimen/font_16sp" />
+
+                            <goodmonit.monit.com.kao.widget.NotoButton
+                                android:id="@+id/btn_nugu_copy_authentication_key"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_10"
+                                android:background="@drawable/bg_btn_radius_white_solid_grey_border"
+                                android:fontFamily="light"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:paddingTop="@dimen/padding_3"
+                                android:paddingBottom="@dimen/padding_3"
+                                android:paddingStart="@dimen/padding_10"
+                                android:paddingEnd="@dimen/padding_10"
+                                android:text="@string/nugu_auth_btn_copy"
+                                android:textColor="@color/colorTextGrey"
+                                android:textSize="@dimen/font_12sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <include layout="@layout/widget_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

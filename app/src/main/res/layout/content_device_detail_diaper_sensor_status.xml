@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/rctn_device_detail_status_background"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/device_status_diaper_background_section_height">
+
+            <RelativeLayout
+                android:layout_width="@dimen/device_status_diaper_icon_section_width"
+                android:layout_height="@dimen/device_status_diaper_icon_section_height"
+                android:layout_centerInParent="true">
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_device_detail_status_where_conn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12sp"
+                    android:fontFamily="medium"
+                    android:textColor="@color/colorTextPrimary"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_device_detail_status_icon"
+                    android:layout_width="@dimen/device_status_diaper_icon_size"
+                    android:layout_height="@dimen/device_status_diaper_icon_size"
+                    android:background="@drawable/ic_device_detail_diaper_normal"
+                    android:layout_centerInParent="true"/>
+                <ImageView
+                    android:id="@+id/iv_device_detail_status_icon_extra"
+                    android:layout_width="@dimen/device_status_diaper_icon_extra_size"
+                    android:layout_height="@dimen/device_status_diaper_icon_extra_size"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"/>
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_device_detail_status_passed_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textSize="@dimen/font_14sp"
+                    android:fontFamily="medium"
+                    android:textColor="@color/colorTextWarning"
+                    android:text="1min passed"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_device_detail_status_initialize"
+                android:layout_width="@dimen/device_status_diaper_init_icon_size"
+                android:layout_height="@dimen/device_status_diaper_init_icon_size"
+                android:layout_margin="@dimen/device_status_diaper_init_icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/ic_refresh_grey_activated"/>
+
+            <TextView
+                android:id="@+id/tv_debug_panel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:textSize="@dimen/font_9sp"
+                android:textColor="@color/colorTextPrimary"
+                android:scrollbars="vertical"
+                android:gravity="bottom"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_device_detail_status_change_diaper"
+            android:layout_width="wrap_content"
+            android:minWidth="@dimen/device_status_diaper_changed_button_width"
+            android:layout_height="@dimen/device_status_diaper_changed_button_height"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:textColor="@color/colorTextDiaperCategory"
+            android:textSize="@dimen/font_16sp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="medium"
+            android:text="@string/device_sensor_diaper_status_change_button"
+            android:background="@drawable/bg_diaper_changed_radius_btn_selector" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/device_status_diaper_status_section_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_device_detail_status_item1_icon"
+                    android:layout_width="@dimen/device_status_diaper_status_icon_size"
+                    android:layout_height="@dimen/device_status_diaper_status_icon_size"
+                    android:background="@drawable/ic_sensor_diaper_battery_9x" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_device_detail_status_item1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextDiaperCategory"
+                    android:text="@string/device_sensor_battery_power" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item1_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/font_20sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="90"
+                        android:fontFamily="light"/>
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item1_content_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_device_detail_status_item1_content"
+                        android:layout_toEndOf="@id/tv_device_detail_status_item1_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="@dimen/font_14sp"
+                        android:textColor="@color/colorTextPrimaryLight"
+                        android:text="%"
+                        android:fontFamily="light"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View style="@style/divider_vertical_line_with_margin"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_device_detail_status_item2_icon"
+                    android:layout_width="@dimen/device_status_diaper_status_icon_size"
+                    android:layout_height="@dimen/device_status_diaper_status_icon_size"
+                    android:background="@drawable/ic_sensor_operation_activated" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_device_detail_status_item2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextDiaperCategory"
+                    android:text="@string/device_sensor_operation"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item2_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/font_20sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="@string/device_sensor_operation_sensing"
+                        android:fontFamily="light"/>
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item2_content_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_device_detail_status_item2_content"
+                        android:layout_toEndOf="@id/tv_device_detail_status_item2_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="@dimen/font_14sp"
+                        android:textColor="@color/colorTextPrimaryLight"
+                        android:text="%"
+                        android:fontFamily="light"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View style="@style/divider_vertical_line_with_margin"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_device_detail_status_item3_icon"
+                    android:layout_width="@dimen/device_status_diaper_status_icon_size"
+                    android:layout_height="@dimen/device_status_diaper_status_icon_size"
+                    android:background="@drawable/ic_sensor_movement_activated" />
+
+                <goodmonit.monit.com.kao.widget.NotoTextView
+                    android:id="@+id/tv_device_detail_status_item3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:textSize="@dimen/font_14sp"
+                    android:textColor="@color/colorTextDiaperCategory"
+                    android:text="@string/device_sensor_movement" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item3_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/font_20sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="@string/device_sensor_movement_running"
+                        android:fontFamily="light"/>
+
+                    <goodmonit.monit.com.kao.widget.NotoTextView
+                        android:id="@+id/tv_device_detail_status_item3_content_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_device_detail_status_item3_content"
+                        android:layout_toEndOf="@id/tv_device_detail_status_item3_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="@dimen/font_14sp"
+                        android:textColor="@color/colorTextPrimaryLight"
+                        android:text="%"
+                        android:fontFamily="light"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_device_detail_status_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center_horizontal|top"
+            android:fontFamily="medium"
+            android:textColor="@color/colorTextDiaperCategory"
+            android:textSize="@dimen/font_16sp"
+            android:text="@string/device_sensor_diaper_status_normal_detail" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_device_detail_status_description_extra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="4"
+            android:layout_marginTop="@dimen/margin_6"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:gravity="center_horizontal|top"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:textSize="@dimen/font_14sp"
+            android:text="@string/device_sensor_diaper_status_normal_detail" />
+    </LinearLayout>
+</RelativeLayout>

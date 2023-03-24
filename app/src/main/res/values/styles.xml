@@ -1,0 +1,118 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppLightTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppLightTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Translucent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.FullScreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="number_picker" parent="AppTheme.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textSize">@dimen/font_24sp</item>
+        <item name="android:gravity">end</item>
+        <item name="colorControlNormal">@color/colorTransparent</item>
+
+    </style>
+
+    <style name="divider_horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <style name="divider_horizontal_line_light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/colorDividerNotification</item>
+    </style>
+
+    <style name="divider_horizontal_line_with_margin" parent="divider_horizontal_line">
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+    </style>
+
+    <style name="divider_vertical_line">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <style name="divider_vertical_line_with_margin" parent="divider_vertical_line">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="shadow_horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorShadow</item>
+    </style>
+
+    <style name="signin_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="dialog_text_button">
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_16sp</item>
+    </style>
+
+    <style name="dialog_text_positive_button" parent="dialog_text_button">
+        <item name="android:textColor">@color/colorTextPositive</item>
+    </style>
+    <style name="dialog_text_negative_button" parent="dialog_text_button">
+        <item name="android:textColor">@color/colorTextNegative</item>
+    </style>
+
+    <style name="connection_next_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/connection_row_connect_button_height</item>
+        <item name="android:background">@drawable/bg_btn_white_green</item>
+        <item name="android:paddingStart">@dimen/padding_20</item>
+        <item name="android:paddingEnd">@dimen/padding_10</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textSize">@dimen/font_16sp</item>
+        <item name="android:textColor">@color/colorTextPositive</item>
+        <item name="android:drawableRight">@drawable/ic_direction_right_green</item>
+    </style>
+</resources>

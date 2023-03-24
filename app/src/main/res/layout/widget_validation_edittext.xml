@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rctn_validation_edittext_checked"
+        android:layout_width="@dimen/signup_validation_check_section_size"
+        android:layout_height="@dimen/signup_validation_check_section_size">
+
+        <ImageView
+            android:id="@+id/iv_validation_edittext_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_validation_check_default"/>
+    </RelativeLayout>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_validation_edittext_title"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/signup_item_title_width"
+        android:maxWidth="@dimen/signup_item_title_max_width"
+        android:layout_height="@dimen/signup_item_height"
+        android:layout_toEndOf="@id/rctn_validation_edittext_checked"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:maxLines="2"
+        android:gravity="center_vertical"
+        android:text="Email"
+        android:textSize="@dimen/font_14sp"
+        android:textColor="@color/colorTextPrimary" />
+
+    <LinearLayout
+        android:id="@+id/lctn_validation_edittext_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/signup_item_height"
+        android:layout_toEndOf="@id/tv_validation_edittext_title"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <goodmonit.monit.com.kao.widget.NotoEditText
+            android:id="@+id/et_validation_edittext_text"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/signup_item_height"
+            android:layout_weight="1"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/colorTextPositive"
+            android:textSize="@dimen/font_12sp"
+            android:textColorHint="@color/colorTextPrimaryLight"
+            android:inputType="textEmailAddress"
+            android:fontFamily="medium"
+            android:hint="Please input e-mail" />
+
+        <ImageButton
+            android:id="@+id/ibtn_validation_edittext_show"
+            android:layout_width="@dimen/signin_edittext_show_icon_size"
+            android:layout_height="@dimen/signin_edittext_show_icon_size"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@drawable/btn_edittext_show_password_green" />
+
+        <ImageButton
+            android:id="@+id/ibtn_validation_edittext_clear"
+            android:layout_width="@dimen/signin_edittext_clear_icon_size"
+            android:layout_height="@dimen/signin_edittext_clear_icon_size"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@drawable/ic_edittext_clear"/>
+    </LinearLayout>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_validation_edittext_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_validation_edittext_title"
+        android:layout_below="@id/lctn_validation_edittext_text"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:textColor="@color/colorTextWarning"
+        android:textSize="@dimen/font_12sp"
+        android:text="Please input email type"/>
+
+    <View style="@style/divider_horizontal_line"
+        android:id="@+id/v_validation_edittext_underline"
+        android:layout_toEndOf="@id/rctn_validation_edittext_checked"
+        android:layout_below="@id/tv_validation_edittext_warning"/>
+</RelativeLayout>

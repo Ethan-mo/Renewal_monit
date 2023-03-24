@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:id="@+id/rctn_widget_setting_detail_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_device_detail_row_height"
+        android:background="@drawable/bg_btn_white_darklight_selector">
+
+        <ImageView
+            android:id="@+id/iv_widget_setting_detail_button_icon"
+            android:layout_width="@dimen/setting_device_icon_size"
+            android:layout_height="@dimen/setting_device_icon_size"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_device_aqmhub" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/padding_20"
+            android:layout_toRightOf="@id/iv_widget_setting_detail_button_icon">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_detail_button_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:textSize="@dimen/font_16sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="기기이름" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_detail_button_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_6"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:text="기기이름"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lctn_widget_setting_detail_button_more_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_detail_button_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimaryLight"
+                android:text="MONIT" />
+
+            <ImageView
+                android:id="@+id/iv_widget_setting_detail_button_right_direction"
+                android:layout_width="@dimen/setting_device_row_direction_size"
+                android:layout_height="@dimen/setting_device_row_direction_size"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:background="@drawable/ic_direction_right_black_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lctn_widget_setting_detail_button_group_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/margin_30"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_widget_setting_detail_button_group_icon"
+                android:layout_width="@dimen/setting_device_detail_master"
+                android:layout_height="@dimen/setting_device_detail_master"
+                android:background="@drawable/ic_group_leader" />
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_widget_setting_detail_button_group_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12sp"
+                android:textColor="@color/colorTextPositive"
+                android:text="@string/group_leader" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_setting_detail_button_other_category_divider"
+        android:layout_alignParentBottom="true" />
+
+    <View style="@style/divider_horizontal_line_light"
+        android:id="@+id/v_widget_setting_detail_button_same_category_divider"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

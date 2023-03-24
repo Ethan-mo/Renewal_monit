@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/connection_scanned_ap_list_row_height">
+
+	<goodmonit.monit.com.kao.widget.NotoButton
+		android:id="@+id/btn_connection_scanned_ap_list_name_connected"
+		android:layout_width="@dimen/connection_scanned_ap_list_row_height"
+		android:layout_height="@dimen/connection_scanned_ap_list_row_height"
+		android:background="@drawable/bg_btn_green_grey_check_selector"
+		android:layout_centerVertical="true" />
+	
+	<goodmonit.monit.com.kao.widget.NotoTextView
+		android:id="@+id/tv_connection_scanned_ap_list_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_marginStart="@dimen/connection_scanned_ap_list_row_height"
+		android:textSize="@dimen/font_14sp"
+		android:textColor="@color/colorTextPrimary"
+		android:text="Goodmonit" />
+
+	<goodmonit.monit.com.kao.widget.NotoTextView
+		android:id="@+id/tv_connection_scanned_ap_list_name_connected"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_marginStart="@dimen/margin_10"
+		android:layout_toEndOf="@id/tv_connection_scanned_ap_list_name"
+		android:textSize="@dimen/font_12sp"
+		android:textColor="@color/colorPrimary"
+		android:text="@string/setting_ap_info_connected" />
+
+	<ImageView
+		android:id="@+id/iv_connection_scanned_ap_list_signal_power"
+		android:layout_width="@dimen/connection_scanned_ap_list_row_wifi_signal_size"
+		android:layout_height="@dimen/connection_scanned_ap_list_row_wifi_signal_size"
+		android:background="@drawable/ic_wifi_signal_power_0"
+		android:layout_centerVertical="true"
+		android:layout_alignParentEnd="true"
+		android:layout_marginEnd="@dimen/margin_30" />
+
+	<ImageView
+		android:id="@+id/iv_connection_scanned_ap_list_security"
+		android:layout_width="@dimen/connection_scanned_ap_list_row_security_size"
+		android:layout_height="@dimen/connection_scanned_ap_list_row_security_size"
+		android:background="@drawable/ic_wifi_security"
+		android:layout_centerVertical="true"
+		android:layout_toStartOf="@id/iv_connection_scanned_ap_list_signal_power"
+		android:layout_marginEnd="@dimen/margin_20" />
+
+	<View style="@style/divider_horizontal_line"
+		android:layout_marginStart="@dimen/connection_scanned_ap_list_row_height"
+		android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhiteLight"
+    android:orientation="vertical">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_group_shared_list_header_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:text="@string/group_title_shared_description"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:textSize="@dimen/font_12sp"/>
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:text="@string/group_title_shared_list"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"/>
+
+    <View style="@style/divider_horizontal_line" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_group_shared_list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:gravity="center"
+        android:text="@string/group_shared_group_list_empty"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"/>
+
+    <View style="@style/divider_horizontal_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/lctn_group_shared_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Add Device List Here -->
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

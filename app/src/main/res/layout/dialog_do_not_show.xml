@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/dialog_contents_section_margin_top_bottom"
+    android:background="@drawable/bg_dialog_white_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title Section -->
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_do_not_show_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dialog_title_section_margin_bottom"
+            android:gravity="center"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextWarning"
+            android:text="@string/cautions_title"
+            android:fontFamily="medium"/>
+
+        <!-- Contents Section -->
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_do_not_show_dialog_contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginStart="@dimen/dialog_contents_section_margin_start_end"
+            android:gravity="left"
+            android:lineSpacingExtra="@dimen/font_5_5sp"
+            android:text="@string/connection_terminate_app_noti_detail"
+            android:textColor="@color/colorTextNegative"
+            android:textSize="@dimen/font_12sp"
+            android:fontFamily="medium" />
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_dialog_do_not_show_this_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/dialog_contents_section_margin_start_end"
+            android:layout_marginStart="@dimen/dialog_contents_section_margin_start_end"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_12sp"
+            android:text="@string/btn_do_not_repeat"
+            android:fontFamily="medium"
+            android:background="@color/colorTransparent"
+            android:drawableLeft="@drawable/btn_radio_default"
+            app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+            app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+            android:drawablePadding="@dimen/padding_5" />
+
+        <View style="@style/divider_horizontal_line_with_margin"
+            android:background="@color/colorDividerForDialogButton" />
+
+        <!-- Button Section -->
+        <goodmonit.monit.com.kao.widget.NotoButton
+            style="@style/dialog_text_positive_button"
+            android:id="@+id/btn_dialog_do_not_show_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_button_section_height"
+            android:text="@string/btn_ok"
+            android:textSize="@dimen/font_16sp"
+            android:fontFamily="medium"/>
+    </LinearLayout>
+</ScrollView>

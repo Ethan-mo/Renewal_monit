@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "767570393257",
+    "firebase_url": "https://monitxhuggies.firebaseio.com",
+    "project_id": "monitxhuggies",
+    "storage_bucket": "monitxhuggies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767570393257:android:404a52a237cd31b5",
+        "android_client_info": {
+          "package_name": "monitxhuggies.monit.com.monit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767570393257-dn04p81240lh9klhgnqlgkckrv1jlodk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRUUlYhe15y_-3hiWXWAfiwlS44Tkn4vg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

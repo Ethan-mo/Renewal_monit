@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:validation="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerPrimaryLight" />
+
+    <goodmonit.monit.com.kao.widget.ValidationEditText
+        android:id="@+id/vet_input_baby_info_babyname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="@string/account_baby_name"
+        validation:textHint="@string/setting_baby_name_hint"
+        validation:textWarning="@string/account_hint_baby_name"/>
+
+    <goodmonit.monit.com.kao.widget.ValidationRadio
+        android:id="@+id/vr_input_baby_info_babysex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="@string/account_baby_sex"
+        validation:textWarning="@string/account_warning_gender"
+        validation:textItem1="@string/sex_baby_boy"
+        validation:textItem2="@string/sex_baby_girl"
+        validation:showUnderline="true"/>
+
+    <goodmonit.monit.com.kao.widget.ValidationBirthdayYYMMDD
+        android:id="@+id/vtv_input_baby_info_babybday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="@string/account_baby_birthday"
+        validation:textWarning="@string/account_warning_birthday"
+        validation:textContents="@string/account_hint_birthday"
+        validation:showUnderline="true"/>
+
+    <goodmonit.monit.com.kao.widget.ValidationImageButtons
+        android:id="@+id/vib_input_baby_info_eating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        validation:textTitle="@string/account_baby_eating"
+        validation:textWarning="@string/account_warning_eating"
+        validation:showUnderline="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDividerPrimaryLight" />
+</LinearLayout>
+
+

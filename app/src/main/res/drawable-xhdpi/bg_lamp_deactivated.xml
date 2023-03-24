@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="oval">
+        <size
+            android:width="@dimen/device_status_lamp_deactivated_background_section_size"
+            android:height="@dimen/device_status_lamp_deactivated_background_section_size" />
+        <solid android:color="#3fdcdcdc" />
+    </shape>
+</item>
+</layer-list>

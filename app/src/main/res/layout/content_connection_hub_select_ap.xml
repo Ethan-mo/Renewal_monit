@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding_20"
+    android:background="@color/colorBackgroundWhiteLight">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_select_ap_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_16sp"
+        android:text="@string/connection_hub_select_ap_title"
+        android:fontFamily="medium" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_select_ap_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_below="@id/tv_connection_hub_select_ap_title"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_hub_scan_ap_detail" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_connection_hub_select_ap_detail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_below="@id/tv_connection_hub_select_ap_detail"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/connection_hub_select_ap_detail_etc" />
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/connection_next_button"
+        android:id="@+id/btn_connection_hub_scan_ap"
+        android:text="@string/connection_scan_ap"
+        android:layout_below="@id/tv_connection_hub_select_ap_detail2"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        app:compoundDrawableWidth="@dimen/connection_next_button_direction_size"
+        app:compoundDrawableHeight="@dimen/connection_next_button_direction_size" />
+
+    <RelativeLayout
+        android:id="@+id/rctn_connection_hub_scan_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_connection_hub_select_ap_detail2"
+        android:visibility="gone">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_connection_hub_scan_refresh"
+            android:text="@string/btn_refresh"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPositive"
+            android:fontFamily="medium"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@color/colorTransparent"
+            android:drawableTop="@drawable/ic_refresh_green"
+            android:layout_alignParentRight="true"
+            app:compoundDrawableWidth="@dimen/connection_next_button_direction_size"
+            app:compoundDrawableHeight="@dimen/connection_next_button_direction_size" />
+
+        <RelativeLayout
+            android:id="@+id/rctn_connection_hub_scanned_ap_status_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_20"
+            android:paddingEnd="@dimen/padding_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_6" >
+
+            <goodmonit.monit.com.kao.widget.NotoTextView
+                android:id="@+id/tv_connection_hub_scanned_ap_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_14sp"
+                android:textColor="@color/colorTextPrimary"
+                android:text="@string/connection_hub_scanning_status"
+                android:layout_centerVertical="true" />
+
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Small"
+                android:id="@+id/pb_connection_hub_scanned_ap_progressing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_toEndOf="@id/tv_connection_hub_scanned_ap_status"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_connection_hub_scanned_ap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rctn_connection_hub_scanned_ap_status_bar"
+            android:background="@color/colorWhite"/>
+
+        <View style="@style/divider_horizontal_line"
+            android:layout_below="@id/rctn_connection_hub_scanned_ap_status_bar"/>
+        <View style="@style/divider_horizontal_line"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

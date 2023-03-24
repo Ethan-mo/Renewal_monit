@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CBFA9</color>
+    <color name="colorPrimaryDark">#197f6c</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTabbar">#f9f9f9</color>
+    <color name="colorPrimaryDeactivated">#804CBFA9</color>
+
+    <color name="colorShadow">#1e000000</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorGreyTransparent">#66000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorButtonActivated">@color/colorPrimaryDark</color>
+    <color name="colorButtonDeactivated">#dbdcdc</color>
+    <color name="colorButtonRemove">#f86455</color>
+
+    <color name="colorDividerPrimaryLight">#f9f9f9</color>
+    <color name="colorDividerPrimary">#979797</color>
+    <color name="colorDivider">#ACABAB</color>
+    <color name="colorDividerNotification">#dcdcdc</color>
+    <color name="colorDividerForDialogButton">@color/colorDividerPrimary</color>
+
+    <color name="colorIndicatorLine">#dcdcdc</color>
+    <color name="colorIndicatorLinePassed">@color/colorPrimary</color>
+
+    <color name="colorTextPrimary">#575757</color>
+    <color name="colorTextPrimaryLight">#9b9b9b</color>
+    <color name="colorTextPrimaryDark">#323131</color>
+    <color name="colorTextSelected">@color/colorPrimary</color>
+    <color name="colorTextNotSelected">#dbdcdc</color>
+    <color name="colorTextNegative">@color/colorTextPrimary</color>
+    <color name="colorTextPositive">@color/colorPrimary</color>
+    <color name="colorTextWarning">#eb7b6f</color>
+    <color name="colorTextWarningOrange">#f4a777</color>
+    <color name="colorTextWarningBlue">#6197ca</color>
+    <color name="colorTextWheelPicker">#595857</color>
+    <color name="colorTextGrey">#979797</color>
+    <color name="colorTextInDialogContents">@color/colorTextPrimary</color>
+
+    <color name="colorYKButton">#4d4d4d</color>
+
+    <color name="colorTextDeviceDisconnected">@color/colorTextNotSelected</color>
+    <color name="colorTextDiaperCategory">#9a80b9</color>
+    <color name="colorTextDiaperCategoryTransparent">#47c9bcd9</color>
+    <color name="colorDiaperChangedButton">#50321358</color>
+    <color name="colorTextEnvironmentCategory">#6197ca</color>
+    <color name="colorTextLampCategory">#4cbfa9</color>
+
+    <color name="colorGraphDiaperCategoryNotSelected">#809a80b9</color>
+    <color name="colorGraphDiaperCategorySelected">#9a80b9</color>
+
+    <color name="colorTextScoreBelow50">#eb7b6f</color>
+    <color name="colorTextScoreBelow70">#ffcc71</color>
+    <color name="colorTextScoreBelow90">#89d267</color>
+    <color name="colorTextScoreBelow100">#6197ca</color>
+
+    <color name="colorBackgroundWhiteLight">#f9f9f9</color>
+
+    <color name="colorLampWarm">#ffe48b</color>
+    <color name="colorLampSeekbarBackground">@color/colorIndicatorLine</color>
+
+    <color name="colorWidgetTitleBar">#f5f5f5</color>
+
+    <color name="colorMovementDeepSleepingGraph">#9a80b9</color>
+    <color name="colorMovementSleepingGraph">#999a80b9</color>
+    <color name="colorMovementMovingGraph">#99dbdcdc</color>
+
+    <color name="colorBackgroundDiaperStatus2">#80dbdcdc</color>
+    <color name="colorGraphDeepSleepSelected">#475890</color>
+    <color name="colorGraphSleepSelected">#a1a9c6</color>
+    <color name="colorGraphDeepSleepDeselected">#dbdcdc</color>
+    <color name="colorGraphSleepDeselected">#eceded</color>
+    <color name="colorGraphSleepSelectedLine">#686fa8</color>
+    <color name="colorGraphThickGuideLine">#d8d8d8</color>
+    <color name="colorGraphThinGuideLine">#f9f9f9</color>
+
+    <color name="colorDiaryTextFeeding">#ca8989</color>
+    <color name="colorDiaryTextComment">#979797</color>
+    <color name="colorDiaryTextSleep">#686fa8</color>
+    <color name="colorDiaryTextDiaper">#ae8c6b</color>
+
+    <color name="colorMultiTouchLv4">#EA7A7A</color>
+    <color name="colorMultiTouchLv3">#FFBC73</color>
+    <color name="colorMultiTouchLv2">#FFE286</color>
+    <color name="colorMultiTouchLv1">#C1E691 </color>
+</resources>

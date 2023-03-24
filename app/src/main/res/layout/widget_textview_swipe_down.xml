@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_swipe_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_10"
+        android:paddingStart="@dimen/padding_20"
+        android:paddingEnd="@dimen/padding_20"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/font_14sp"
+        android:text="@string/swipe_down_to_refresh" />
+
+    <View
+        android:layout_below="@id/tv_swipe_down"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_footer_height" />
+</RelativeLayout>

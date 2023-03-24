@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_main_light"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/colorWhite"
+    android:contentInsetStart="0dp"
+    app:contentInsetStart="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_gravity="start|center_vertical">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_toolbar_main_light_left"
+                android:layout_width="@dimen/toolbar_image_button_size"
+                android:layout_height="@dimen/toolbar_image_button_size"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/margin_10"
+                android:background="@drawable/ic_add_black" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_toolbar_main_light_center"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/toolbar_logo_size"
+            android:src="@drawable/ic_logo_main_light_kc"
+            android:layout_centerInParent="true" />
+
+        <goodmonit.monit.com.kao.widget.NotoTextView
+            android:id="@+id/tv_toolbar_main_light_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="MONIT"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="medium"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_10">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_toolbar_main_light_right"
+                android:layout_width="@dimen/toolbar_image_button_size"
+                android:layout_height="@dimen/toolbar_image_button_size"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_tab_user"
+                android:layout_marginEnd="@dimen/margin_10" />
+
+            <ImageView
+                android:id="@+id/iv_toolbar_main_light_right_new_mark"
+                android:layout_width="@dimen/new_mark_with_character_size"
+                android:layout_height="@dimen/new_mark_with_character_size"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_new_mark"
+                android:visibility="gone"/>
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_toolbar_main_light_right2"
+                android:layout_width="@dimen/toolbar_image_button_size"
+                android:layout_height="@dimen/toolbar_image_button_size"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/btn_toolbar_main_light_right"
+                android:background="@drawable/ic_alarm_enabled"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>

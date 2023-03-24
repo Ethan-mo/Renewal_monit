@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monitxkao.iml" filepath="$PROJECT_DIR$/.idea/modules/monitxkao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/monitxkao.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/monitxkao.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/monitxkao.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/monitxkao.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/monitxkao.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/monitxkao.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/monitxkao.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/monitxkao.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

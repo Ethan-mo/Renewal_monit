@@ -1,0 +1,25 @@
+[
+{
+  "directory": "C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/x86",
+  "command": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dserver_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\server-lib.dir\\src\\main\\cpp\\server-lib.cpp.o -c C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\server-lib.cpp",
+  "file": "C:/monit/henderson/monitxkao/app/src/main/cpp/server-lib.cpp"
+},
+
+{
+  "directory": "C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/x86",
+  "command": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\src\\main\\cpp\\native-lib.cpp.o -c C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\native-lib.cpp",
+  "file": "C:/monit/henderson/monitxkao/app/src/main/cpp/native-lib.cpp"
+},
+
+{
+  "directory": "C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/x86",
+  "command": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dem_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\em-lib.dir\\src\\main\\cpp\\em-lib.cpp.o -c C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\em-lib.cpp",
+  "file": "C:/monit/henderson/monitxkao/app/src/main/cpp/em-lib.cpp"
+},
+
+{
+  "directory": "C:/monit/henderson/monitxkao/app/.cxx/cmake/debug/x86",
+  "command": "C:\\Users\\Ethan\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Ethan/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dem_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\em-lib.dir\\src\\main\\cpp\\aes\\aes.cpp.o -c C:\\monit\\henderson\\monitxkao\\app\\src\\main\\cpp\\aes\\aes.cpp",
+  "file": "C:/monit/henderson/monitxkao/app/src/main/cpp/aes/aes.cpp"
+}
+]

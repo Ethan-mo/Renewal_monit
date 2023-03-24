@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/rctn_tooltip_box"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@drawable/bg_tooltip_box_up_right"
+	android:paddingStart="@dimen/padding_20"
+	android:paddingEnd="@dimen/padding_20">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_15"
+		android:layout_marginBottom="@dimen/margin_15"
+		android:paddingEnd="@dimen/tooltip_box_close_button_size"
+		android:orientation="vertical">
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_tooltip_box_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/margin_10"
+			android:textColor="@color/colorTextPrimary"
+			android:textSize="@dimen/font_14sp"
+			android:fontFamily="medium"
+			android:text="@string/tooltip_lamp_section_enable_button_title"/>
+
+		<goodmonit.monit.com.kao.widget.NotoTextView
+			android:id="@+id/tv_tooltip_box_contents"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_tooltip_box_title"
+			android:textColor="@color/colorTextPrimary"
+			android:textSize="@dimen/font_12sp"
+			android:text="@string/tooltip_lamp_section_enable_button_title"/>
+
+	</LinearLayout>
+
+	<goodmonit.monit.com.kao.widget.NotoButton
+		android:id="@+id/btn_tooltip_box_close"
+		android:layout_width="@dimen/tooltip_box_close_button_size"
+		android:layout_height="@dimen/tooltip_box_close_button_size"
+		android:layout_marginTop="@dimen/margin_15"
+		android:layout_alignParentRight="true"
+		android:background="@drawable/ic_tooltip_box_close"/>
+
+</RelativeLayout>

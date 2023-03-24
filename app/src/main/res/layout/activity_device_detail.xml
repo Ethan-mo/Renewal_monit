@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_main_light" />
+
+        <include layout="@layout/tabbar_device_detail" />
+
+        <View style="@style/shadow_horizontal_line" />
+
+        <FrameLayout
+            android:id="@+id/fragment_device_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_device_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        -->
+    </LinearLayout>
+    <include layout="@layout/widget_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

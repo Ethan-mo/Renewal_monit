@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/padding_10"
+    android:paddingBottom="@dimen/padding_10"
+    android:paddingStart="@dimen/padding_10"
+    android:paddingEnd="@dimen/padding_10"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_app_widget1_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Baby"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="medium" />
+
+        <RelativeLayout
+            android:id="@+id/rctn_app_widget1_sensor_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/tv_app_widget1_sensor_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="medium"
+                android:textSize="@dimen/font_8sp"
+                android:textColor="@color/colorTextPrimaryDark" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rctn_app_widget1_lamp_onoff"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_20"
+            android:layout_alignParentEnd="true">
+
+            <Button
+                android:id="@+id/btn_app_widget1_lamp_onoff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_widget_lamp_onoff"/>
+
+            <ProgressBar
+                android:id="@+id/pb_app_widget1_lamp_onoff"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/lctn_app_widget1_status_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lctn_app_widget1_status1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_app_widget1_status1"
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bg_btn_oval_airquality_normal" />
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_10sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_title"/>
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status1_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12sp"
+                    android:fontFamily="medium"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_normal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lctn_app_widget1_status2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_app_widget1_status2"
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bg_btn_oval_airquality_normal" />
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_10sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_title"/>
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status2_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12sp"
+                    android:fontFamily="medium"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_normal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lctn_app_widget1_status3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_app_widget1_status3"
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bg_btn_oval_airquality_normal" />
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_10sp"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_title"/>
+
+                <TextView
+                    android:id="@+id/tv_app_widget1_status3_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12sp"
+                    android:fontFamily="medium"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/device_sensor_diaper_status_normal"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lctn_app_widget1_status_disconnected"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_app_widget1_status_disconnected_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_6"
+                android:textSize="@dimen/font_8sp"
+                android:textColor="@color/colorTextPrimaryDark"
+                android:fontFamily="medium"
+                android:text="@string/device_sensor_disconnected_title"/>
+
+            <TextView
+                android:id="@+id/tv_app_widget1_status_disconnected_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:textSize="@dimen/font_8sp"
+                android:textColor="@color/colorTextPrimaryDark"
+                android:text="@string/device_sensor_disconnected_detail"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_app_widget_setting"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="@dimen/margin_20"
+            android:background="@drawable/ic_widget_setting" />
+
+        <TextView
+            android:id="@+id/btn_app_widget_updated_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/margin_6"
+            android:gravity="end"
+            android:text="PM 03:20"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextGrey"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_app_widget_refresh"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:background="@drawable/ic_widget_refresh" />
+
+            <ProgressBar
+                android:id="@+id/pb_app_widget_refresh"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

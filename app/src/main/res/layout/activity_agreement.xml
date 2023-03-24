@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/toolbar" />
+
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_agreement_activity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agreement_title"
+        android:textSize="@dimen/font_16sp"
+        android:textColor="@color/colorTextPrimary"
+        android:fontFamily="medium"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20" />
+
+    <goodmonit.monit.com.kao.widget.NotoTextView
+        android:id="@+id/tv_agreement_activity_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agreement_description"
+        android:textSize="@dimen/font_14sp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20" />
+
+    <goodmonit.monit.com.kao.widget.NotoButton
+        android:id="@+id/btn_agreement_activity_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="@string/agreement_all"
+        android:textSize="@dimen/font_14sp"
+        android:textColor="@color/colorTextPrimary"
+        android:background="@color/colorTransparent"
+        android:minWidth="0dp"
+        android:drawableLeft="@drawable/btn_radio_default"
+        app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+        app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+        android:drawablePadding="@dimen/padding_10"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_30"
+        android:layout_marginEnd="@dimen/margin_20"/>
+
+    <View style="@style/divider_horizontal_line" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_10"
+        android:background="@color/colorBackgroundWhiteLight"/>
+    <View style="@style/divider_horizontal_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/margin_50">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_agreement_activity_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/agreement_service"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@color/colorTransparent"
+            android:minWidth="0dp"
+            android:drawableLeft="@drawable/btn_radio_default"
+            app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+            app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <RelativeLayout
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="wrap_content">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_agreement_activity_show_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"/>
+
+            <ImageView
+                android:layout_width="@dimen/setting_device_row_direction_size"
+                android:layout_height="@dimen/setting_device_row_direction_size"
+                android:background="@drawable/ic_direction_right_deactivated"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_20"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/margin_50">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_agreement_activity_privacy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/agreement_privacy"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@color/colorTransparent"
+            android:minWidth="0dp"
+            android:drawableLeft="@drawable/btn_radio_default"
+            app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+            app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <RelativeLayout
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="wrap_content">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_agreement_activity_show_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"/>
+
+            <ImageView
+                android:layout_width="@dimen/setting_device_row_direction_size"
+                android:layout_height="@dimen/setting_device_row_direction_size"
+                android:background="@drawable/ic_direction_right_deactivated"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_20"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/margin_50">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_agreement_activity_collectinfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/agreement_collect"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@color/colorTransparent"
+            android:minWidth="0dp"
+            android:drawableLeft="@drawable/btn_radio_default"
+            app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+            app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <RelativeLayout
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="wrap_content">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_agreement_activity_show_collectinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"/>
+
+            <ImageView
+                android:layout_width="@dimen/setting_device_row_direction_size"
+                android:layout_height="@dimen/setting_device_row_direction_size"
+                android:background="@drawable/ic_direction_right_deactivated"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_20"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/margin_50">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_agreement_activity_provide_3rd_party"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/agreement_disclosure"
+            android:textSize="@dimen/font_12sp"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@color/colorTransparent"
+            android:minWidth="0dp"
+            android:drawableLeft="@drawable/btn_radio_default"
+            app:compoundDrawableWidth="@dimen/signup_radio_button_size"
+            app:compoundDrawableHeight="@dimen/signup_radio_button_size"
+            android:drawablePadding="@dimen/padding_10"/>
+
+        <RelativeLayout
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="wrap_content">
+
+            <goodmonit.monit.com.kao.widget.NotoButton
+                android:id="@+id/btn_agreement_activity_show_provide_3rd_party"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"/>
+
+            <ImageView
+                android:layout_width="@dimen/setting_device_row_direction_size"
+                android:layout_height="@dimen/setting_device_row_direction_size"
+                android:background="@drawable/ic_direction_right_deactivated"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_20"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBackgroundWhiteLight">
+
+        <goodmonit.monit.com.kao.widget.NotoButton
+            android:id="@+id/btn_agreement_activity_confirm"
+            android:layout_width="@dimen/dfu_update_button_width"
+            android:layout_height="@dimen/dfu_update_button_height"
+            android:layout_marginTop="@dimen/below_next_button_margin"
+            android:layout_marginBottom="@dimen/below_next_button_margin"
+            android:background="@drawable/bg_btn_radius_white_solid_shadow_border"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textSize="@dimen/font_14sp"
+            android:textColor="@color/colorTextNotSelected"
+            android:fontFamily="medium"
+            android:text="@string/btn_ok"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
