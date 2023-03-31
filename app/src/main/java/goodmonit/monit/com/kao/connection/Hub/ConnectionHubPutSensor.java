@@ -79,7 +79,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
         return view;
     }
 
-	private void _initView(View v) {
+	private void _initView(View v) { // View
 		btnConnect = (Button)v.findViewById(R.id.btn_connection_hub_put_sensor_connect);
 		btnConnect.setOnClickListener(new View.OnClickListener() {
 			@Override
