@@ -17,10 +17,12 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import goodmonit.monit.com.kao.R;
+import goodmonit.monit.com.kao.UserInfo.Group;
 import goodmonit.monit.com.kao.activity.ConnectionActivity;
 import goodmonit.monit.com.kao.analytics.ScreenInfo;
 import goodmonit.monit.com.kao.constants.Configuration;
 import goodmonit.monit.com.kao.constants.InternetErrorCode;
+import goodmonit.monit.com.kao.devices.DeviceBLEConnection;
 import goodmonit.monit.com.kao.devices.DeviceInfo;
 import goodmonit.monit.com.kao.devices.DeviceType;
 import goodmonit.monit.com.kao.dialog.ProgressHorizontalDialog;
@@ -29,6 +31,7 @@ import goodmonit.monit.com.kao.fragment.BaseFragment;
 import goodmonit.monit.com.kao.managers.PreferenceManager;
 import goodmonit.monit.com.kao.managers.ServerManager;
 import goodmonit.monit.com.kao.managers.ServerQueryManager;
+import goodmonit.monit.com.kao.managers.UserInfoManager;
 import goodmonit.monit.com.kao.managers.ValidationManager;
 import goodmonit.monit.com.kao.message.NotificationMessage;
 import goodmonit.monit.com.kao.message.NotificationType;
@@ -70,15 +73,17 @@ public class ConnectionLampReady extends BaseFragment {
 		mContext = inflater.getContext();
 		mPreferenceMgr = PreferenceManager.getInstance(getContext());
 		mConnectionMgr = ConnectionManager.getInstance();
-		mScreenInfo = new ScreenInfo(701); // 수정필요
+		mValidationMgr = new ValidationManager(getContext()); // 파라미터로 입력한 문자열을 mContext에 삽입
+		mScreenInfo = new ScreenInfo(7011); // 수정필요
+
         _initView(view);
 		setView(STEP1_POWER_ON);
 
-		int available = ConnectionManager.checkBluetoothStatus();
-		if (available == ConnectionManager.STATE_DISABLED || available == ConnectionManager.STATE_UNAVAILABLE) {
-			Intent btEnableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivityForResult(btEnableIntent, ConnectionActivity.REQUEST_CODE_ENABLE_BLUETOOTH_FOR_SCAN);
-		}
+//		int available = ConnectionManager.checkBluetoothStatus(); // 블루투스 연결 상황을 체크
+//		if (available == ConnectionManager.STATE_DISABLED || available == ConnectionManager.STATE_UNAVAILABLE) {
+//			Intent btEnableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//			startActivityForResult(btEnableIntent, ConnectionActivity.REQUEST_CODE_ENABLE_BLUETOOTH_FOR_SCAN);
+//		}
         return view;
     }
 
@@ -87,14 +92,14 @@ public class ConnectionLampReady extends BaseFragment {
 		btnConnect.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!mConnectionMgr.checkLocationStatus()) { // Need to enable Location before BLE connection
-					((ConnectionActivity)getActivity()).checkLocation();
-					return;
-				}
+//				if (!mConnectionMgr.checkLocationStatus()) { // Need to enable Location before BLE connection
+//					((ConnectionActivity)getActivity()).checkLocation();
+//					return;
+//				}
 
 				if (mStep == STEP1_POWER_ON) {
-					vsAnimation.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.anim_slide_in_from_right));
-					vsAnimation.showNext();
+//					vsAnimation.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.anim_slide_in_from_right));
+//					vsAnimation.showNext();
 					setView(STEP2_CHECK_LED);
 				} else if (mStep == STEP2_CHECK_LED) {
 					if (Configuration.NO_INTERNET) {
@@ -131,7 +136,7 @@ public class ConnectionLampReady extends BaseFragment {
 				btnConnect.setText(getString(R.string.btn_next));
 				break;
 			case STEP2_CHECK_LED:
-				tvDetail.setText(getString(R.string.connection_lamp_ready_detail_step2));
+				tvDetail.setText(getString(R.string.connection_lamp_ready_detail_step2)); // 파란불이 깜박이는지 확인...
 				btnConnect.setText(getString(R.string.connection_start_connect));
 				break;
 		}
@@ -142,7 +147,7 @@ public class ConnectionLampReady extends BaseFragment {
 		mManualConnectCancelled = false;
 		if (mDlgProcessing != null) {
 			try {
-				mDlgProcessing.setContents(getString(R.string.dialog_contents_scanning));
+				//mDlgProcessing.setContents(getString(R.string.dialog_contents_scanning));
 				mDlgProcessing.show();
 			} catch (Exception e) {
 
@@ -156,143 +161,7 @@ public class ConnectionLampReady extends BaseFragment {
 		mConnectionMgr.manualConnectLamp();
 	}
 
-    private Handler mHandler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			switch(msg.what) {
-				case MSG_REFRESH_PROGRESS:
-					removeMessages(MSG_REFRESH_PROGRESS);
-					if (scanSeconds < (int)(ConnectionManager.TIME_BLE_MANUAL_SCAN_TIME_OUT_SEC + ConnectionManager.TIME_BLE_MANUAL_CONNECTION_TIME_OUT_SEC)) {
-						if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
-							mDlgProcessing.setProgress((int)((100.0 / (ConnectionManager.TIME_BLE_MANUAL_SCAN_TIME_OUT_SEC + ConnectionManager.TIME_BLE_MANUAL_CONNECTION_TIME_OUT_SEC - 1)) * scanSeconds));
-						}
-						scanSeconds++;
-						this.sendEmptyMessageDelayed(MSG_REFRESH_PROGRESS, 1000);
-					}
-					break;
-				case ConnectionManager.MSG_SCAN_FINISHED:
-					int foundDeviceCount = msg.arg1;
-					if (DBG) Log.d(TAG, "ConnectionManager.MSG_SCAN_FINISHED : " + foundDeviceCount);
 
-					if (foundDeviceCount == 0) {
-						mDlgProcessing.dismiss();
-						if (!mManualConnected && !mManualConnectCancelled) {
-							mDlgNotDetected.setContents(getString(R.string.dialog_contents_not_detected_lamp));
-							try {
-								mDlgNotDetected.show();
-								mConnectionMgr.sendDeviceNotFound(DeviceType.LAMP);
-							} catch (Exception e) {
-
-							}
-						} else {
-
-						}
-						break;
-					}
-
-					mDlgProcessing.setContents(getString(R.string.dialog_contents_connecting));
-					break;
-				case ConnectionManager.MSG_BLE_CONNECTION_STATE_CHANGE:
-					int state = msg.arg1;
-					DeviceInfo deviceInfo = (DeviceInfo)msg.obj;
-					break;
-				case ConnectionManager.MSG_BLE_MANUALLY_CONNECTED:
-					if (mDlgConnectionFailed != null && mDlgConnectionFailed.isShowing()) {
-						if (DBG) Log.e(TAG, "Dismiss connection failed dialog");
-						mDlgConnectionFailed.dismiss();
-					}
-					mManualConnected = true;
-					removeMessages(MSG_REFRESH_PROGRESS);
-					int state2 = msg.arg1;
-					DeviceInfo deviceInfo2 = (DeviceInfo)msg.obj;
-					if (DBG) Log.d(TAG, "MSG_BLE_MANUALLY_CONNECTED : [" + deviceInfo2.deviceId + "] " + state2 + " / " + deviceInfo2.btmacAddress);
-					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
-						mDlgProcessing.setProgress(100);
-						new Handler().postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								mDlgProcessing.dismiss();
-							}
-						}, 500);
-					}
-					break;
-
-				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_GUEST:
-					mGuestDeviceInfo = (DeviceInfo)msg.obj;
-					if (DBG) Log.d(TAG, "MSG_BLE_MANUAL_CONNECTION_GUEST : " + mGuestDeviceInfo.toString());
-					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
-						mDlgProcessing.dismiss();
-					}
-					if (mDlgGuest != null && !mDlgGuest.isShowing()) {
-						try {
-							mDlgGuest.show();
-							NotificationMessage msgGuest = new NotificationMessage(NotificationType.SYSTEM_DEVICE_ALREADY_REGISTERED, DeviceType.LAMP, mGuestDeviceInfo.deviceId, "aid:" + mPreferenceMgr.getAccountId() + "/did:" + mGuestDeviceInfo.deviceId, System.currentTimeMillis());
-							ServerQueryManager.getInstance(mContext).setNotificationFeedback(msgGuest, null);
-						} catch (Exception e) {
-
-						}
-					}
-					break;
-				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_TIME_OUT:
-					int reason = msg.arg2;
-					if (DBG) Log.e(TAG, "MSG_BLE_MANUAL_CONNECTION_TIME_OUT : " + reason);
-					if (reason < 10) { // BLE 데이터를 제대로 못받음 : 센서 전원을 껐다가 다시 연결해주세요, 5 : Serial Number받았고 getDeviceId 수행함
-						if (mDlgConnectionFailed != null) {
-							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection_reason_ble));
-						}
-					} else if (reason == 10 || reason == 12) { // BLE 데이터는 모두 받은상태로 GetDeviceId 또는 GetCloudId에서 TIMEOUT
-						if (mDlgConnectionFailed != null) {
-							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection_reason_internet));
-						}
-					} else { // 100 : 기본 메시지
-						if (mDlgConnectionFailed != null) {
-							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection));
-						}
-					}
-					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
-						mDlgProcessing.dismiss();
-					}
-					if (mDlgConnectionFailed != null && !mDlgConnectionFailed.isShowing() && !mManualConnected && !mManualConnectCancelled) {
-						try {
-							mDlgConnectionFailed.show();
-						} catch (Exception e) {
-
-						}
-					}
-					break;
-
-				case MSG_CHANGE_ANIMATION:
-					if (mStep == STEP1_POWER_ON) {
-						switch(mAnimationIndex % 3) {
-							case 0:
-								ivAnimationStep1.setImageResource(R.drawable.ani_lamp_ready1);
-								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS);
-								break;
-							case 1:
-								ivAnimationStep1.setImageResource(R.drawable.ani_lamp_ready2);
-								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS);
-								break;
-							case 2:
-								ivAnimationStep1.setImageResource(R.color.colorTransparent);
-								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS / 2);
-								break;
-						}
-					} else if (mStep == STEP2_CHECK_LED) {
-						switch(mAnimationIndex % 2) {
-							case 0:
-								ivAnimationStep2.setImageResource(R.drawable.ani_lamp_ready3);
-								break;
-							case 1:
-								ivAnimationStep2.setImageResource(R.drawable.ani_lamp_ready4);
-								break;
-						}
-						this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS / 2);
-					}
-					mAnimationIndex++;
-					break;
-			}
-		}
-	};
 
     @Override
 	public void onPause() {
@@ -307,7 +176,7 @@ public class ConnectionLampReady extends BaseFragment {
 		super.onResume();
 		if (DBG) Log.i(TAG, "onResume");
 		mMainActivity = getActivity();
-		((ConnectionActivity)mMainActivity).updateView();
+		//((ConnectionActivity)mMainActivity).updateView(); // 뭔지 모르겠음.
 		((ConnectionActivity)mMainActivity).setFragmentHandler(mHandler);
 
 		// 여기는 뭘까...
@@ -317,7 +186,8 @@ public class ConnectionLampReady extends BaseFragment {
 
 		if (mDlgProcessing == null) {
 			mDlgProcessing = new ProgressHorizontalDialog(
-					mContext,
+					//mContext,
+					mMainActivity,
 					getString(R.string.dialog_contents_scanning),
 					getString(R.string.btn_cancel),
 					new View.OnClickListener() {
@@ -335,7 +205,8 @@ public class ConnectionLampReady extends BaseFragment {
 
 		if (mDlgConnectionFailed == null) {
 			mDlgConnectionFailed = new SimpleDialog(
-					mContext,
+					mMainActivity,
+					//mContext,
 					getString(R.string.dialog_contents_failed_connection),
 					getString(R.string.btn_cancel),
 					new View.OnClickListener() {
@@ -356,7 +227,8 @@ public class ConnectionLampReady extends BaseFragment {
 
 		if (mDlgInternetConnection == null) {
 			mDlgInternetConnection = new SimpleDialog(
-					mContext,
+					mMainActivity,
+					//mContext,
 					getString(R.string.dialog_contents_need_internet_connection),
 					getString(R.string.btn_ok),
 					new View.OnClickListener() {
@@ -401,16 +273,15 @@ public class ConnectionLampReady extends BaseFragment {
 			mDlgGuest = new SimpleDialog(
 					mContext,"[Code" + ConnectionActivity.CODE_HELP_HUB_ALREADY_REGISTERED + "]",
 					getString(R.string.dialog_contents_already_registered_invite_request) + mPreferenceMgr.getShortId(),
-					getString(R.string.btn_device_initialize),
-					new View.OnClickListener() {
+					getString(R.string.btn_device_initialize), // 초기화 버튼
+					new View.OnClickListener() { //초기화 버튼을 눌렀을 때,
 						@Override
 						public void onClick(View v) {
 							mDlgGuest.dismiss();
-							if (mDlgConnectionFailed != null && !mDlgInitializeLamp.isShowing()) {
+							if (mDlgInitializeLamp != null && !mDlgInitializeLamp.isShowing()) {
 								try {
 									mDlgInitializeLamp.show();
 								} catch (Exception e) {
-
 								}
 							}
 							((ConnectionActivity)mMainActivity).allowGuestManualConnection(false);
@@ -439,9 +310,9 @@ public class ConnectionLampReady extends BaseFragment {
 			mDlgGuest.setContentsGravity(Gravity.LEFT);
 		}
 		mDlgGuest.showHelpButton(true);
-		mDlgGuest.setHelpButtonListener(new View.OnClickListener() {
+		mDlgGuest.setHelpButtonListener(new View.OnClickListener() {// 도움말 버튼
 			@Override
-			public void onClick(View view) {
+			public void onClick(View view) { // 도움말 버튼을 눌렀을 때,
 				((ConnectionActivity)mContext).showHelpContents(11, 27);
 			}
 		});
@@ -464,7 +335,7 @@ public class ConnectionLampReady extends BaseFragment {
 							if (inputShortId.length() > 1 && mValidationMgr.isValidShortId(inputShortId)) {  // 길이가 1보다 크고, ~~~
 								if(inputShortId.equalsIgnoreCase(mPreferenceMgr.getShortId()))
 								{
-									((ConnectionActivity)mMainActivity).mServerQueryMgr.initDevice(
+									((ConnectionActivity)mMainActivity).mServerQueryMgr.initDevice( // 여기서 오류가 발생
 											mLampInfo.type, // int type
 											mLampInfo.deviceId, // long type
 											mLampInfo.getEnc(), // string type
@@ -510,4 +381,171 @@ public class ConnectionLampReady extends BaseFragment {
 		super.onDestroy();
 		if (DBG) Log.i(TAG, "onDestroy");
 	}
+	private Handler mHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			switch(msg.what) {
+				case MSG_REFRESH_PROGRESS:
+					removeMessages(MSG_REFRESH_PROGRESS); // 과정을 새로고침 했을 때
+					if (scanSeconds < (int)(ConnectionManager.TIME_BLE_MANUAL_SCAN_TIME_OUT_SEC + ConnectionManager.TIME_BLE_MANUAL_CONNECTION_TIME_OUT_SEC)) {
+						if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
+							mDlgProcessing.setProgress((int)((100.0 / (ConnectionManager.TIME_BLE_MANUAL_SCAN_TIME_OUT_SEC + ConnectionManager.TIME_BLE_MANUAL_CONNECTION_TIME_OUT_SEC - 1)) * scanSeconds));
+						}
+						scanSeconds++;
+						this.sendEmptyMessageDelayed(MSG_REFRESH_PROGRESS, 1000);
+					}
+					break;
+				case ConnectionManager.MSG_SCAN_FINISHED: // 스캔이 끝났을 때
+					System.out.println("스캔이 끝났을 때 실행되었다.");
+					int foundDeviceCount = msg.arg1;
+					if (DBG) Log.d(TAG, "ConnectionManager.MSG_SCAN_FINISHED : " + foundDeviceCount);
+
+					if (foundDeviceCount == 0) {
+						mDlgProcessing.dismiss();
+						if (!mManualConnected && !mManualConnectCancelled) {
+							mDlgNotDetected.setContents(getString(R.string.dialog_contents_not_detected_lamp));
+							try {
+								mDlgNotDetected.show();
+								mConnectionMgr.sendDeviceNotFound(DeviceType.LAMP);
+							} catch (Exception e) {
+
+							}
+						} else {
+
+						}
+						break;
+					}
+
+					mDlgProcessing.setContents(getString(R.string.dialog_contents_connecting));
+					break;
+				case ConnectionManager.MSG_BLE_CONNECTION_STATE_CHANGE:
+					int state = msg.arg1;
+					DeviceInfo deviceInfo = (DeviceInfo)msg.obj;
+					break;
+				case ConnectionManager.MSG_BLE_MANUALLY_CONNECTED: // BLE가 연결된 후
+					System.out.println("BLE가 연결된 후 실행되었다.");
+					if (mDlgConnectionFailed != null && mDlgConnectionFailed.isShowing()) {
+						if (DBG) Log.e(TAG, "Dismiss connection failed dialog");
+						mDlgConnectionFailed.dismiss();
+					}
+					mManualConnected = true;
+					removeMessages(MSG_REFRESH_PROGRESS);
+					int state2 = msg.arg1;
+					DeviceInfo deviceInfo2 = (DeviceInfo)msg.obj;
+					if (DBG) Log.d(TAG, "MSG_BLE_MANUALLY_CONNECTED : [" + deviceInfo2.deviceId + "] " + state2 + " / " + deviceInfo2.btmacAddress);
+					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
+						mDlgProcessing.setProgress(100);
+						new Handler().postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								mDlgProcessing.dismiss();
+							}
+						}, 500);
+					}
+					break;
+
+				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_GUEST: // BLE 메뉴얼에 GUEST가 연결되었을 때
+					System.out.println("BLE 메뉴얼에 GUEST가 연결되었을 때 실행되었다.");
+					DeviceInfo mGuestDeviceInfo = (DeviceInfo)msg.obj;
+					if (mGuestDeviceInfo != null) {
+						mLampInfo = mGuestDeviceInfo;
+//						DeviceBLEConnection bleConnection = ConnectionManager.getDeviceBLEConnection(mGuestDeviceInfo.deviceId, mGuestDeviceInfo.type);
+//						System.out.println(mGuestDeviceInfo.deviceId);
+//						System.out.println(mGuestDeviceInfo.type);
+//						if (bleConnection != null) {
+//							mLampInfo = bleConnection.getmLampDeviceInfo();
+//							System.out.println(mLampInfo);
+//							System.out.println(mLampInfo.deviceId);
+//							System.out.println(mLampInfo.type);
+//						}
+					}
+					if (DBG) Log.d(TAG, "MSG_BLE_MANUAL_CONNECTION_GUEST : " + mGuestDeviceInfo.toString());
+					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
+						mDlgProcessing.dismiss();
+					}
+					if (mDlgGuest != null && !mDlgGuest.isShowing()) {
+						try {
+							mDlgGuest.show();
+							NotificationMessage msgGuest = new NotificationMessage(NotificationType.SYSTEM_DEVICE_ALREADY_REGISTERED, DeviceType.LAMP, mGuestDeviceInfo.deviceId, "aid:" + mPreferenceMgr.getAccountId() + "/did:" + mGuestDeviceInfo.deviceId, System.currentTimeMillis());
+							ServerQueryManager.getInstance(mContext).setNotificationFeedback(msgGuest, null);
+						} catch (Exception e) {
+
+						}
+					}
+					break;
+//				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_TIME_OUT:
+//					System.out.println("MSG_BLE_MANUAL_CONNECTION_TIME_OUT 실행되었다.");
+//					int reason = msg.arg2;
+//					if (DBG) Log.e(TAG, "MSG_BLE_MANUAL_CONNECTION_TIME_OUT : " + reason);
+//					if (reason < 10) { // BLE 데이터를 제대로 못받음 : 센서 전원을 껐다가 다시 연결해주세요, 5 : Serial Number받았고 getDeviceId 수행함
+//						if (mDlgConnectionFailed != null) {
+//							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection_reason_ble));
+//						}
+//					} else if (reason == 10 || reason == 12) { // BLE 데이터는 모두 받은상태로 GetDeviceId 또는 GetCloudId에서 TIMEOUT
+//						if (mDlgConnectionFailed != null) {
+//							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection_reason_internet));
+//						}
+//					} else { // 100 : 기본 메시지
+//						if (mDlgConnectionFailed != null) {
+//							mDlgConnectionFailed.setContents(getString(R.string.dialog_contents_failed_connection));
+//						}
+//					}
+//					if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
+//						mDlgProcessing.dismiss();
+//					}
+//					if (mDlgConnectionFailed != null && !mDlgConnectionFailed.isShowing() && !mManualConnected && !mManualConnectCancelled) {
+//						try {
+//							mDlgConnectionFailed.show();
+//						} catch (Exception e) {
+//
+//						}
+//					}
+//					break;
+
+				case MSG_CHANGE_ANIMATION:
+					if (mStep == STEP1_POWER_ON) {
+						switch(mAnimationIndex % 3) {
+							case 0:
+								ivAnimationStep1.setImageResource(R.drawable.ani_lamp_ready1);
+								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS);
+								break;
+							case 1:
+								ivAnimationStep1.setImageResource(R.drawable.ani_lamp_ready2);
+								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS);
+								break;
+							case 2:
+								ivAnimationStep1.setImageResource(R.color.colorTransparent);
+								this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS / 2);
+								break;
+						}
+					} else if (mStep == STEP2_CHECK_LED) {
+						switch(mAnimationIndex % 2) {
+							case 0:
+								ivAnimationStep2.setImageResource(R.drawable.ani_lamp_ready3);
+								break;
+							case 1:
+								ivAnimationStep2.setImageResource(R.drawable.ani_lamp_ready4);
+								break;
+						}
+						this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS / 2);
+					}
+					mAnimationIndex++;
+					break;
+			}
+		}
+	};
+	public void setTitle(String title) {
+		mTitle = title;
+		if (tvTitle != null) {
+			tvTitle.setText(title);
+		}
+	}
+
+	public void setButtonName(String name) {
+		mButtonName = name;
+		if (btnConnect != null) {
+			btnConnect.setText(name);
+		}
+	}
+
 }

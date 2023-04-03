@@ -70,7 +70,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 		mContext = inflater.getContext();
 		mPreferenceMgr = PreferenceManager.getInstance(getContext());
 		mConnectionMgr = ConnectionManager.getInstance();
-		mValidationMgr = new ValidationManager(getContext());
+		mValidationMgr = new ValidationManager(getContext()); // 파라미터로 입력한 문자열을 mContext에 삽입
 		mScreenInfo = new ScreenInfo(701);
 		mAnimationIndex = 0;
         _initView(view);
@@ -123,11 +123,11 @@ public class ConnectionHubPutSensor extends BaseFragment {
 		switch (step) {
 			case STEP1_CHECK_SENSOR:
 				tvDetail.setText(getString(R.string.connection_hub_put_sensor_detail_step1));
-				btnConnect.setText(getString(R.string.btn_connect_monit_sensor));
+				btnConnect.setText(getString(R.string.btn_connect_monit_sensor)); //기저귀 센서 연결하기
 				ivAnimation.setImageResource(R.drawable.ani_hub_put_sensor1);
 				break;
 			case STEP2_PUT_SENSOR:
-				tvDetail.setText(getString(R.string.connection_hub_put_sensor_detail_step2));
+				tvDetail.setText(getString(R.string.connection_hub_put_sensor_detail_step2)); // 센서를 허브에 꽂아주세요.
 				btnConnect.setText(getString(R.string.connection_start_connect));
 				mHandler.sendEmptyMessage(MSG_CHANGE_ANIMATION);
 				break;
@@ -253,7 +253,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 					mContext,
 					"[Code" + ConnectionActivity.CODE_HELP_HUB_ALREADY_REGISTERED + "]",
 					getString(R.string.dialog_contents_hub_already_registered) + mPreferenceMgr.getShortId(),
-					getString(R.string.btn_device_initialize),
+					getString(R.string.btn_device_initialize), //초기화 버튼
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
@@ -267,8 +267,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 							}
 							((ConnectionActivity)mMainActivity).allowGuestManualConnection(false);
 						}
-					},
-					getString(R.string.btn_close),
+					}, getString(R.string.btn_close), // 닫기 버튼
 					new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
@@ -336,36 +335,6 @@ public class ConnectionHubPutSensor extends BaseFragment {
 								} else {
 									((ConnectionActivity)mMainActivity).showToast(getString(R.string.warning_not_match_short_id)); // 회원 코드가 일치하지 않습니다.
 								}
-								/*
-								mServerQueryMgr.checkSerialNumber(
-										mHubInfo.type,
-										mHubInfo.deviceId,
-										msg,
-										new ServerManager.ServerResponseListener() {
-											@Override
-											public void onReceive(int responseCode, String errCode, String data) {
-												if (InternetErrorCode.SUCCEEDED.equals(errCode)) {
-													mServerQueryMgr.initDevice(
-															mHubInfo.type,
-															mHubInfo.deviceId,
-															mHubInfo.getEnc(),
-															new ServerManager.ServerResponseListener() {
-																@Override
-																public void onReceive(int responseCode, String errCode, String data) {
-																	if (InternetErrorCode.SUCCEEDED.equals(errCode)) {
-																		((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_succeeded));
-																		mHubInfo = null;
-																		mDlgInitializeHub.dismiss();
-																	} else {
-																		((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_failed));
-																	}
-																}
-															});
-												} else {
-													((ConnectionActivity)mMainActivity).showToast(getString(R.string.toast_hub_initialize_wrong_serialnumber));
-												}
-											}
-										});*/
 							}
 							else {
 								((ConnectionActivity)mMainActivity).showToast(getString(R.string.group_warning_invalid_short_id));// 올바른 회원코드 양식이 아닙니다.
@@ -413,7 +382,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 		@Override
 		public void handleMessage(Message msg) {
 			switch(msg.what) {
-				case MSG_REFRESH_PROGRESS:
+				case MSG_REFRESH_PROGRESS: // 과정을 새로 고침 했을 때
 					if (scanSeconds <= TIME_HUB_CONNECTION_WITH_SENSOR_TIME_OUT_SEC) {
 						if (mDlgProcessing != null && mDlgProcessing.isShowing()) {
 							mDlgProcessing.setProgress((int)TIME_HUB_CONNECTION_WITH_SENSOR_TIME_OUT_SEC * scanSeconds);
@@ -441,7 +410,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 						}
 					}
 					break;
-				case MSG_CHANGE_ANIMATION:
+				case MSG_CHANGE_ANIMATION: // 애니메이션이 변경되었을 때
 					if (mStep == STEP1_CHECK_SENSOR) {
 
 					} else if (mStep == STEP2_PUT_SENSOR) {
@@ -476,7 +445,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 					this.sendEmptyMessageDelayed(MSG_CHANGE_ANIMATION, CHANGE_ANIMATION_INTERVAL_MS);
 					break;
 
-				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_GUEST:
+				case ConnectionManager.MSG_BLE_MANUAL_CONNECTION_GUEST: // BLE메뉴얼에 GUEST가 연결했을 때
 					mGuestDeviceInfo = (DeviceInfo)msg.obj;
 					if (DBG) Log.d(TAG, "MSG_BLE_MANUAL_CONNECTION_GUEST : " + mGuestDeviceInfo.toString());
 
@@ -494,7 +463,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 					}
 
 					break;
-				case ConnectionManager.MSG_HUB_CONNECTED_WITH_SENSOR:
+				case ConnectionManager.MSG_HUB_CONNECTED_WITH_SENSOR: // 허브에 센서가 연결되었을 때
 					if (isConnectingHubFound) break;
 					else isConnectingHubFound = true;
 					//if (DBG) Log.d(TAG, "MSG_HUB_CONNECTED_WITH_SENSOR : " + mConnectingSensorForHubInfo.toString() + " / " + mConnectedHubDeviceId);
@@ -515,7 +484,7 @@ public class ConnectionHubPutSensor extends BaseFragment {
 
 						}
 
-						if (mHubInfo.cloudId > 0 && mHubInfo.cloudId != mPreferenceMgr.getAccountId()) {
+						if (mHubInfo.cloudId > 0 && mHubInfo.cloudId != mPreferenceMgr.getAccountId()) { // 해당 계정의 그룹 리스트를 받고, 그룹에...
 							boolean isAlreadyInvitedCloud = false;
 							for (Group group : UserInfoManager.getInstance(mContext).getGroupList()) {
 								if (group == null) continue;

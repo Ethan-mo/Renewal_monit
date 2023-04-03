@@ -39,6 +39,7 @@ public class DeviceBLEConnection {
 
 	protected DeviceInfo mDeviceInfo;
 	protected DeviceInfo mHubDeviceInfo;
+	protected DeviceInfo mLampDeviceInfo;
 	protected Context mContext;
 
 	protected VersionManager mVersionMgr;
@@ -112,6 +113,9 @@ public class DeviceBLEConnection {
 
 	public DeviceInfo getHubDeviceInfo() {
 		return mHubDeviceInfo;
+	}
+	public DeviceInfo getmLampDeviceInfo() {
+		return mLampDeviceInfo;
 	}
 
 	public void manualConnect() {
