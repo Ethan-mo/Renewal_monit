@@ -256,6 +256,7 @@ public class ConnectionActivity extends BaseActivity {
         } else {
             if (DBG) Log.d(TAG, "Location Off");
             if (mDlgLocation == null) {
+
                 mDlgLocation = new SimpleDialog(
                         mContext,
                         getString(R.string.dialog_need_to_enable_location),

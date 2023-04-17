@@ -21,6 +21,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import android.Manifest;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+
+import android.content.pm.PackageManager;
+
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,7 +61,7 @@ public class ConnectionMonitReady extends BaseFragment {
 
 	private static final int STEP1_POWER_ON			= 1;
 	private static final int STEP2_CHECK_LED		= 2;
-
+	private static final int REQUEST_BLUETOOTH_PERMISSIONS = 1; // 여기 추가됨
 	private static final int MSG_CHANGE_ANIMATION	= 1;
 	private static final int MSG_REFRESH_PROGRESS 	= 2;
 	private static final long CHANGE_ANIMATION_INTERVAL_MS = 1000;
@@ -466,6 +473,8 @@ public class ConnectionMonitReady extends BaseFragment {
 		mConnectionMgr.manualConnectDiaperSensor();
 	}
 
+
+
     private Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -488,8 +497,14 @@ public class ConnectionMonitReady extends BaseFragment {
 					if (foundList != null) {
 						for (BluetoothDevice foundDevice : foundList) {
 							if (foundDevice == null) continue;
-							String deviceName = foundDevice.getName();
-							deviceListString += deviceName + "(" + foundDevice.getAddress() + "),";
+							try {
+								// 권한이 필요한 코드를 실행하세요.
+								String deviceName = foundDevice.getName();
+								deviceListString += deviceName + "(" + foundDevice.getAddress() + "),";
+							} catch (SecurityException e) {
+								// 권한이 없거나 사용자에 의해 거부된 경우 예외를 처리하세요.
+							}
+
 						}
 					}
 

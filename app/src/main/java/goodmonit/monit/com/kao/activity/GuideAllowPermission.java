@@ -1,8 +1,10 @@
 package goodmonit.monit.com.kao.activity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -158,7 +160,17 @@ public class GuideAllowPermission extends BaseActivity {
                     if (DBG) Log.d(TAG, "step: " + mCurrentStep);
 
                     if (mCurrentStep == STEP_ALLOW_BLE_PERMISSION) {
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            requestPermissions(
+                                    new String[]{
+                                            Manifest.permission.BLUETOOTH,
+                                            Manifest.permission.BLUETOOTH_SCAN,
+                                            Manifest.permission.BLUETOOTH_ADVERTISE,
+                                            Manifest.permission.BLUETOOTH_CONNECT
+                                    },
+                                    2);
+                        }
+                       else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                             // Quick permission check
                             int permissionCheck = mContext.checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION);
                             if (permissionCheck != 0) {
